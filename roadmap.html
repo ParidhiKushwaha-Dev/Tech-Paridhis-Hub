@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,4 +110,115 @@
         </div>
     </footer>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmaps | TechPari</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="roadmap-page">
+   
+   <div class="roadmap-container">
+       </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="techpari.png" alt="TechPari">
+            <span>TechPari</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">My Vision</a></li>
+            <li><a href="roadmap.html"class="active">Roadmap</a></li>
+            <li><a href="skills.html">Skills</a></li>
+             <li><a href="toolbox.html">Tools</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Connect</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Explore Career <span>Roadmaps</span></h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('it-jobs')">IT Jobs</button>
+            <button class="tab-btn" onclick="showTab('digital-marketing')">Digital Marketing</button>
+        </div>
+
+        <div id="it-jobs" class="roadmap-grid active">
+            <div class="card"><h3>AI/ML Engineer</h3><button class="btn-view" onclick="openPath('AI/ML Engineer')">View Roadmap →</button></div>
+            <div class="card"><h3>DevOps Engineer</h3><button class="btn-view" onclick="openPath('DevOps Engineer')">View Roadmap →</button></div>
+            <div class="card"><h3>Cloud Architect</h3><button class="btn-view" onclick="openPath('Cloud Architect Engineer')">View Roadmap →</button></div>
+            <div class="card"><h3>Cybersecurity Engineer</h3><button class="btn-view" onclick="openPath('Cybersecurity Engineer')">View Roadmap →</button></div>
+            <div class="card"><h3>Full-Stack Developer</h3><button class="btn-view" onclick="openPath('Full-Stack Developer')">View Roadmap →</button></div>
+            <div class="card"><h3>Data Scientist</h3><button class="btn-view" onclick="openPath('Data Scientist')">View Roadmap →</button></div>
+        </div>
+
+        <div id="digital-marketing" class="roadmap-grid">
+            <div class="card"><h3>Performance Marketing</h3><button class="btn-view" onclick="openPath('Performance Marketing Specialist')">View Roadmap →</button></div>
+            <div class="card"><h3>Growth Hacker</h3><button class="btn-view" onclick="openPath('Growth Hacker')">View Roadmap →</button></div>
+            <div class="card"><h3>AI Marketing Analyst</h3><button class="btn-view" onclick="openPath('AI Marketing Analyst')">View Roadmap →</button></div>
+            <div class="card"><h3>SEO Manager</h3><button class="btn-view" onclick="openPath('SEO Manager')">View Roadmap →</button></div>
+            <div class="card"><h3>Marketing Analytics</h3><button class="btn-view" onclick="openPath('Marketing Analytics Manager')">View Roadmap →</button></div>
+            <div class="card"><h3>Automation Specialist</h3><button class="btn-view" onclick="openPath('Marketing Automation Specialist')">View Roadmap →</button></div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.roadmap-grid').forEach(grid => grid.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function openPath(jobName) {
+            localStorage.setItem('selectedJob', jobName);
+            window.location.href = 'path-details.html';
+        }
+    </script>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="techpari.png" alt="TechPari">
+                    <span>TechPari</span>
+                </div>
+                <p class="footer-owner">Resources Curated with ❤️ by <span>Paridhi Kushwaha</span></p><br>
+                <p>Empowering Tier-3 CSE students with researched roadmaps and zero-nonsense career guidance.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                     <li><a href="toolbox.html">Tools</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="about.html">My Vision</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Get in Touch</h4>
+                <p>For collaboration or queries:</p>
+                <a href="mailto:techpari85@gmail.com" class="email-link">techpari85@gmail.com</a>
+                <div class="social-icons">
+    <a href="https://www.linkedin.com/in/paridhi-kushwaha-77a8352b2/" target="_blank">LinkedIn</a> | 
+    <a href="https://github.com/ParidhiKushwaha-Dev" target="_blank">GitHub</a> | 
+    <a href="https://twitter.com/your-username" target="_blank">Twitter</a>
+</div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechPari. Built for the future, by a CSE insider. ✨</p>
+        </div>
+    </footer>
+</body>
+>>>>>>> 2962f2176d209c9deb16b151768e9e6fc2d2823d
 </html>

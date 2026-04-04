@@ -1,0 +1,10 @@
+# TechPari Robots.txt
+User-agent: *
+Allow: /
+Allow: /techpari.png
+Allow: /google analytics.png
+Allow: /hubspot.png
+Allow: /cisco.png
+
+# Sitemap link Google ko batane ke liye
+Sitemap: https://tech-pari.vercel.app/sitemap.xml

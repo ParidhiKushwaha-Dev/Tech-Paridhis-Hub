@@ -707,6 +707,11 @@ body {
     font-size: 0.85rem; /* "Curated with ❤️" waali line */
 }
 
+.nav-links, .footer-links ul {
+    list-style: none !important; /* Isse wo dots/bullets gayab ho jayenge */
+    padding: 0;
+    margin: 0;
+}
 
 /* --- Dedicated Tools Page CSS --- */
 
@@ -1042,5 +1047,26 @@ body {
         grid-template-columns: 1fr !important; /* 3 columns se 1 column */
         gap: 30px !important;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-direction: column; /* Links ko ek ke niche ek lane ke liye */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links li {
+        list-style-type: none !important; /* Double safety for dots */
     }
 }

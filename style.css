@@ -974,22 +974,33 @@ body {
 /* Mobile Devices (Phones) ke liye */
 @media (max-width: 768px) {
   
-  /* 1. Navbar ko vertical list mein badalne ke liye */
-  nav, .navbar {
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 15px 0;
-  }
-  
-  .navbar div {
+  header {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Logo upar, links niche */
+    align-items: center;    /* Center align for mobile */
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;      /* Sabse zaruri! Isse links niche wali line mein aa jayenge */
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    gap: 10px;            /* Links ke beech thodi jagah */
+    width: 100%;
+}
+
+.navbar a {
+    font-size: 14px;      /* Mobile par thoda chota font behtar lagta hai */
+    white-space: nowrap;  /* Ek link beech se na toote */
+}
 
   /* 2. Hero Section (Text overlap fix) */
+  .hero-content {
+    padding: 0 15px; /* Side se thodi breathing space */
+    text-align: center;
+}
   h1 {
     font-size: 1.8rem !important; /* Bada text chota ho jayega */
     line-height: 1.2;
@@ -1013,8 +1024,8 @@ body {
   }
 
   /* 4. Horizontal scrolling band karne ke liye */
-  body, html {
-    overflow-x: hidden;
+ body {
+    overflow-x: hidden; /* Screen se bahar kuch nahi jayega */
     width: 100%;
-  }
+}
 }

@@ -971,61 +971,76 @@ body {
     }
 }
 
-/* Mobile Devices (Phones) ke liye */
+/* --- FIXED MOBILE OPTIMIZATION (Replace your last @media block with this) --- */
 @media (max-width: 768px) {
-  
-  header {
-    display: flex;
-    flex-direction: column; /* Logo upar, links niche */
-    align-items: center;    /* Center align for mobile */
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
+    
+    /* 1. Navbar & Logo Alignment */
+    .navbar {
+        flex-direction: column !important; /* Logo upar, links niche */
+        padding: 15px 5% !important;
+        height: auto !important;
+        gap: 15px;
+    }
 
-.navbar {
-    display: flex;
-    flex-wrap: wrap;      /* Sabse zaruri! Isse links niche wali line mein aa jayenge */
-    justify-content: center;
-    gap: 10px;            /* Links ke beech thodi jagah */
-    width: 100%;
-}
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Links ko niche wali line mein laane ke liye */
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 0;
+        width: 100%;
+    }
 
-.navbar a {
-    font-size: 14px;      /* Mobile par thoda chota font behtar lagta hai */
-    white-space: nowrap;  /* Ek link beech se na toote */
-}
+    .nav-links li {
+        margin: 0; /* Extra spacing hatane ke liye */
+    }
 
-  /* 2. Hero Section (Text overlap fix) */
-  .hero-content {
-    padding: 0 15px; /* Side se thodi breathing space */
-    text-align: center;
-}
-  h1 {
-    font-size: 1.8rem !important; /* Bada text chota ho jayega */
-    line-height: 1.2;
-    padding: 0 10px;
-  }
+    .nav-links a {
+        font-size: 0.85rem !important;
+        white-space: nowrap;
+    }
 
-  h2 {
-    font-size: 1.4rem !important;
-  }
+    /* 2. Hero Section Fix */
+    .hero-section {
+        padding: 80px 5% 60px !important;
+    }
 
-  /* 3. Buttons ko ek ke niche ek lane ke liye */
-  .hero-buttons, .buttons-container {
-    flex-direction: column !important;
-    align-items: center;
-    width: 100%;
-  }
+    .hero-section h1 {
+        font-size: 2rem !important; /* Desktop par clamp hai, mobile par fix 2rem */
+        line-height: 1.2;
+        width: 100%;
+    }
 
-  button, .btn {
-    width: 90% !important; /* Mobile par button full width rahenge */
-    margin: 5px 0;
-  }
+    .hero-section p {
+        font-size: 1rem !important;
+        padding: 0 10px;
+        width: 100%;
+    }
 
-  /* 4. Horizontal scrolling band karne ke liye */
- body {
-    overflow-x: hidden; /* Screen se bahar kuch nahi jayega */
-    width: 100%;
-}
+    /* 3. Buttons Fix */
+    .cta-buttons {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100% !important; /* Buttons full width ho jayenge mobile par */
+        max-width: 300px;
+        text-align: center;
+    }
+
+    /* 4. Global Overflow Fix (The Dark Space Killer) */
+    html, body {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+    }
+
+    /* Footer Grid Fix for Mobile */
+    .footer-container {
+        grid-template-columns: 1fr !important; /* 3 columns se 1 column */
+        gap: 30px !important;
+        text-align: center;
+    }
 }

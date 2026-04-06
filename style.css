@@ -970,3 +970,51 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Mobile Devices (Phones) ke liye */
+@media (max-width: 768px) {
+  
+  /* 1. Navbar ko vertical list mein badalne ke liye */
+  nav, .navbar {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 15px 0;
+  }
+  
+  .navbar div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* 2. Hero Section (Text overlap fix) */
+  h1 {
+    font-size: 1.8rem !important; /* Bada text chota ho jayega */
+    line-height: 1.2;
+    padding: 0 10px;
+  }
+
+  h2 {
+    font-size: 1.4rem !important;
+  }
+
+  /* 3. Buttons ko ek ke niche ek lane ke liye */
+  .hero-buttons, .buttons-container {
+    flex-direction: column !important;
+    align-items: center;
+    width: 100%;
+  }
+
+  button, .btn {
+    width: 90% !important; /* Mobile par button full width rahenge */
+    margin: 5px 0;
+  }
+
+  /* 4. Horizontal scrolling band karne ke liye */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}

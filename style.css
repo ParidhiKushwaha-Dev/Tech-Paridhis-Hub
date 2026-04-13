@@ -1075,12 +1075,12 @@ body {
 /* Section Styling */
 .who-i-am-section {
     padding: 60px 20px;
-    background-color: #f9f9f9; /* Optional: section ko highlight karne ke liye */
+    background-color: #150622;; /* Optional: section ko highlight karne ke liye */
 }
 
 /* Card ka Glow aur Hover effect */
 .who-i-am-card {
-    background: #ffffff;
+    background: #333;;
     padding: 30px;
     border-radius: 15px;
     border: 2px solid transparent;
@@ -1089,8 +1089,8 @@ body {
 
 /* Hover par Glow effect */
 .who-i-am-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2); /* Blue Glow */
-    border-color: #007bff; /* Border color change */
+    box-shadow: 0 10px 30px #94a3b8; /* Blue Glow */
+    border-color: #9333ea; /* Border color change */
     transform: translateY(-10px); /* Card thoda upar uthega */
 }
 
@@ -1098,5 +1098,5 @@ body {
 .who-i-am-card p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #333;
+    color: white;
 }

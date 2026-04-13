@@ -1114,10 +1114,10 @@ body {
 
 }
 
-/* Section & Heading Styling */
+//* Cluster Section: Dark Background */
 .cluster-section {
     padding: 60px 20px;
-    background-color: #150622;
+    background-color: #000000; /* Yahan Black set kar diya */
     text-align: center;
 }
 

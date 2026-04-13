@@ -1168,10 +1168,10 @@ body {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Yahan "background-color" likha hai */
 }
 
-/* Hover karne par button ka glow/color change */
+/* Hover par button ka glow/color change */
 .cluster-card:hover .card-action {
     background-color: #6b21a8; /* Hover par thoda dark purple */
     box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);

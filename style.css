@@ -1093,8 +1093,9 @@ body {
     border-radius: 15px;
     border: 2px solid transparent;
     max-width: 800px; /* Card ki width control */
-    margin: 0 auto;  /* Section ke middle mein lane ke liye */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0 auto;  /* Section ke middle mein lane ke liye */ 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+
 }
 
 /* Hover par Glow effect */
@@ -1112,3 +1113,46 @@ body {
     text-align: center; /* Text bhi center mein */
 
 }
+
+/* Section & Heading Styling */
+.cluster-section {
+    padding: 60px 20px;
+    background-color: #150622;
+    text-align: center;
+}
+
+.section-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.cluster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Card Styling */
+.cluster-card {
+    background: #333;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover Glow Effect */
+.cluster-card:hover {
+    box-shadow: 0 10px 30px #94a3b8;
+    border-color: #9333ea;
+    transform: translateY(-10px);
+}
+
+.cluster-card h3 { color: white; margin: 15px 0; }
+.cluster-card p { color: #ccc; font-size: 0.95rem; }
+.card-icon { font-size: 2rem; }

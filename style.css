@@ -1070,3 +1070,21 @@ body {
         list-style-type: none !important; /* Double safety for dots */
     }
 }
+
+
+/* Content Box Styling */
+.content-writing-box {
+    padding: 30px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    transition: all 0.4s ease-in-out; /* Smooth transition */
+}
+
+/* Glow effect on hover */
+.content-writing-box:hover {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.2); /* Soft Blue Glow */
+    border-color: #007bff;
+    transform: translateY(-5px); /* Halki si upar shift hogi */
+}

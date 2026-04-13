@@ -1156,3 +1156,23 @@ body {
 .cluster-card h3 { color: white; margin: 15px 0; }
 .cluster-card p { color: #ccc; font-size: 0.95rem; }
 .card-icon { font-size: 2rem; }
+
+
+/* Button ka style */
+.card-action {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #9333ea; /* Purple background */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover karne par button ka glow/color change */
+.cluster-card:hover .card-action {
+    background-color: #6b21a8; /* Hover par thoda dark purple */
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+}

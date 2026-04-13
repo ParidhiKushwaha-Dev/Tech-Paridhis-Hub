@@ -1176,3 +1176,10 @@ body {
     color: white !important;
 }
 
+
+.cluster-card {
+    height: 100%; /* Dono cards ko equal height dega */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Button hamesha niche rahega */
+}

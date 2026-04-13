@@ -1072,19 +1072,31 @@ body {
 }
 
 
-/* Content Box Styling */
-.content-writing-box {
-    padding: 30px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background-color: #fff;
-    transition: all 0.4s ease-in-out; /* Smooth transition */
+/* Section Styling */
+.who-i-am-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Optional: section ko highlight karne ke liye */
 }
 
-/* Glow effect on hover */
-.content-writing-box:hover {
-    box-shadow: 0 0 25px rgba(0, 123, 255, 0.2); /* Soft Blue Glow */
-    border-color: #007bff;
-    transform: translateY(-5px); /* Halki si upar shift hogi */
+/* Card ka Glow aur Hover effect */
+.who-i-am-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth motion */
+}
+
+/* Hover par Glow effect */
+.who-i-am-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2); /* Blue Glow */
+    border-color: #007bff; /* Border color change */
+    transform: translateY(-10px); /* Card thoda upar uthega */
+}
+
+/* Text styling */
+.who-i-am-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
 }

@@ -98,7 +98,7 @@ body {
 }
 
 .hero-section p {
-    color: white;
+    color: rgb(233, 222, 222);
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 40px;
@@ -171,7 +171,7 @@ body {
 
 .card-icon { font-size: 3rem; margin-bottom: 20px; }
 .phil-card h3 { margin-bottom: 15px; font-size: 1.4rem; }
-.phil-card p { color: white; }
+.phil-card p { color: rgb(233, 222, 222); }
 
 .personal-note {
     text-align: center;
@@ -1218,4 +1218,44 @@ body {
 .contact-btn:hover {
     transform: scale(1.05); /* Hover par thoda bada hoga */
     background-color: #7e22ce;
+}
+
+
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.faq-item {
+    background: #251238; /* Dark purple shade */
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #9333ea;
+    color: white;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    list-style: none; /* Default arrow hide karne ke liye */
+    font-size: 1.1rem;
+}
+
+.faq-item summary::after {
+    content: "▼"; /* Click karne ka sign */
+    float: right;
+    font-size: 0.8rem;
+}
+
+.faq-item[open] summary::after {
+    content: "▲"; /* Khulne par arrow change */
+}
+
+.faq-item p {
+    margin-top: 15px;
+    color: #cbd5e1;
+    border-top: 1px solid #475569;
+    padding-top: 15px;
 }

@@ -1268,3 +1268,13 @@ body {
     border-top: 1px solid #475569;
     padding-top: 15px;
 }
+
+/* Tumhare logo wale link ki class ka naam yahan likho, jaise maine niche 'logo-text-link' likha hai */
+a.logo-text-link, 
+a.logo-text-link:visited, 
+a.logo-text-link:hover, 
+a.logo-text-link:active {
+    color: white !important;
+    text-decoration: none !important;
+    border: none !important; /* Agar koi border/underline dikh rahi ho */
+}

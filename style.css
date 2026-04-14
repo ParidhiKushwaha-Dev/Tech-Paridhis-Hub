@@ -39,12 +39,21 @@ body {
     z-index: 1000;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    font-size: 1.4rem;
+/* Logo aur Website Name (Link) ka style */
+.logo-text-link {
+    text-decoration: none; /* Sabse pehle underline ko hataya */
+    color: white !important; /* Text ko white set kiya aur ensure kiya ki override ho */
+    font-size: 2.5rem; /* Text size (optional, agar kam ho) */
+    font-weight: 700; /* Text ko bold banaya */
+    transition: color 0.3s ease; /* Smooth behavior jab color change ho (agar hum karen) */
+}
+
+/* Jab mouse text par jaye (Hover state) */
+.logo-text-link:hover {
+    color: white !important; /* Hover par bhi white hi rahega */
+    text-decoration: none; /* Hover par bhi underline nahi chahiye */
+    /* Agar hover par underline chahiye toh niche wali line use karna: */
+    /* text-decoration: underline; */
 }
 
 .logo img { height: 40px; }

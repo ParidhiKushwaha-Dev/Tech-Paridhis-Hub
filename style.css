@@ -151,7 +151,7 @@ body {
     background-color: #0d0d10;
 }
 
-.container { max-width: var(--container-width); margin: 0 auto; }
+.container { max-width: var(--container-width); margin: 0 auto; padding: 80px 5% 40px; }
 
 .philosophy-header { text-align: center; margin-bottom: 60px; }
 .philosophy-header h2 { font-size: 2.5rem; margin-bottom: 20px; }
@@ -1001,6 +1001,7 @@ body {
         padding: 15px 5% !important;
         height: auto !important;
         gap: 15px;
+        position: relative !important;
     }
 
     .nav-links {

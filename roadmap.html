@@ -45,8 +45,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Tracking my learning milestones and professional growth in the tech industry.</p>
         
         <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('it-jobs')">IT Jobs</button>
-            <button class="tab-btn" onclick="showTab('digital-marketing')">Digital Marketing</button>
+            <button class="tab-btn active" onclick="showTab('it-jobs', this)">IT Jobs</button>
+<button class="tab-btn" onclick="showTab('digital-marketing', this)">Digital Marketing</button>
         </div>
 
         <div id="it-jobs" class="roadmap-grid active">
@@ -68,31 +68,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
+    
     <script>
-        function showTab(tabId) {
-    // 1. Pehle saare grids ko hide karo
-    const allGrids = document.querySelectorAll('.roadmap-grid');
-    allGrids.forEach(grid => {
-        grid.classList.remove('active');
-        grid.style.display = 'none'; // Extra safety
-    });
-
-    // 2. Saare buttons se active class hatao
-    const allButtons = document.querySelectorAll('.tab-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-
-    // 3. Jo ID aayi hai, us grid ko show karo
-    const targetGrid = document.getElementById(tabId);
-    if (targetGrid) {
-        targetGrid.classList.add('active');
-        targetGrid.style.display = 'grid'; // CSS grid wapas lao
+    function showTab(tabId, btn) {
+        document.querySelectorAll('.roadmap-grid').forEach(grid => {
+            grid.classList.remove('active');
+            grid.style.display = 'none';
+        });
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        
+        document.getElementById(tabId).style.display = 'grid';
+        document.getElementById(tabId).classList.add('active');
+        btn.classList.add('active');
     }
+</script>
 
-    // 4. Current button ko highlight karo
-    event.preventDefault();
-    event.currentTarget.classList.add('active');
-}
-    </script>
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">

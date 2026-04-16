@@ -124,5 +124,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>&copy; 2026 TechPari. Built for the future, by a CSE insider. ✨</p>
         </div>
     </footer>
+
+    <script>
+function showTab(tabName) {
+    // Sabhi tab contents ko hide karo
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.style.display = 'none');
+
+    // Sabhi buttons se 'active' class hatao
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Jo click kiya gaya usse show karo
+    document.getElementById(tabName).style.display = 'block';
+    
+    // Button ko active highlight karo
+    event.currentTarget.classList.add('active');
+}
+</script>
 </body>
 </html>

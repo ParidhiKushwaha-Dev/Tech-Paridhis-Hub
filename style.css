@@ -1278,15 +1278,3 @@ a.logo-text-link:active {
     text-decoration: none !important;
     border: none !important; /* Agar koi border/underline dikh rahi ho */
 }
-
-/* Buttons ko clickable banane ke liye */
-.tab-btn, .it-jobs-btn {
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
-    pointer-events: auto;
-}
-
-.roadmap-hero-section {
-    margin-top: 100px; /* Header se thoda niche push karo */
-}

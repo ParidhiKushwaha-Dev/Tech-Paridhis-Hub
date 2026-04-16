@@ -1266,3 +1266,20 @@ a.logo-text-link:active {
     text-decoration: none !important;
     border: none !important; /* Agar koi border/underline dikh rahi ho */
 }
+
+
+/* Logo text ko medium aur clean banane ke liye */
+.logo-text-link {
+    text-decoration: none !important;
+    color: white !important;
+    font-size: 1.6rem; /* 2.5rem se ghata kar 1.6rem kiya */
+    font-weight: 700;
+    letter-spacing: -0.5px; /* Thoda sa tight spacing modern lagta hai */
+    transition: all 0.3s ease;
+}
+
+/* Roadmap page par jo span hai uspar bhi dhyaan do */
+.logo span {
+    font-size: 1.6rem;
+    font-weight: 700;
+}

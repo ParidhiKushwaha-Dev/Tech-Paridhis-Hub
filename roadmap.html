@@ -72,16 +72,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         function showTab(tabId) {
-            document.querySelectorAll('.roadmap-grid').forEach(grid => grid.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
+    // 1. Pehle saare grids ko hide karo
+    const allGrids = document.querySelectorAll('.roadmap-grid');
+    allGrids.forEach(grid => {
+        grid.classList.remove('active');
+        grid.style.display = 'none'; // Extra safety
+    });
 
-        function openPath(jobName) {
-            localStorage.setItem('selectedJob', jobName);
-            window.location.href = 'path-details.html';
-        }
+    // 2. Saare buttons se active class hatao
+    const allButtons = document.querySelectorAll('.tab-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+
+    // 3. Jo ID aayi hai, us grid ko show karo
+    const targetGrid = document.getElementById(tabId);
+    if (targetGrid) {
+        targetGrid.classList.add('active');
+        targetGrid.style.display = 'grid'; // CSS grid wapas lao
+    }
+
+    // 4. Current button ko highlight karo
+    event.currentTarget.classList.add('active');
+}
     </script>
     <footer class="main-footer">
         <div class="footer-container">

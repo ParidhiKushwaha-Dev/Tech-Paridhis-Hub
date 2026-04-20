@@ -1286,3 +1286,83 @@ a.logo-text-link:active {
     text-decoration: none !important;
     border: none !important; /* Agar koi border/underline dikh rahi ho */
 }
+
+
+/* --- Skills Page Custom Content Section --- */
+.skills-detail-section {
+    padding: 70px 0;
+    background-color: var(--bg-dark); /* Wahi dark purple/black theme */
+}
+
+/* Header & H1 Styling */
+.skills-header-block {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-skill-heading {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.intro-summary {
+    color: var(--text-dim);
+    font-size: 1.15rem;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Horizontal Divider */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 45px 0;
+}
+
+/* Section Cards (IT & Digital Marketing) */
+.skill-category-block {
+    background: #1e112b; /* Deep purple shade jo tumhari theme ko suit kare */
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 35px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category-block:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary); /* Purple hover effect */
+}
+
+.category-title {
+    color: var(--primary); /* Wahi signature purple color */
+    font-size: 1.85rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Content Placeholder (Pari, tumhara manual text yahan style hoga) */
+.content-placeholder {
+    color: var(--text-main);
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.content-placeholder p {
+    margin-bottom: 18px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .skill-category-block {
+        padding: 20px;
+    }
+    
+    .main-skill-heading {
+        font-size: 1.6rem;
+    }
+}

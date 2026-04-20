@@ -1277,136 +1277,124 @@ body {
     padding-top: 15px;
 }
 
-/* Tumhare logo wale link ki class ka naam yahan likho, jaise maine niche 'logo-text-link' likha hai */
-a.logo-text-link, 
-a.logo-text-link:visited, 
-a.logo-text-link:hover, 
-a.logo-text-link:active {
-    color: white !important;
-    text-decoration: none !important;
-    border: none !important; /* Agar koi border/underline dikh rahi ho */
-}
+/* --- Final Skills Page Layout Fix --- */
 
-
-/* --- Skills Page Custom Content Section --- */
 .skills-detail-section {
-    padding: 70px 0;
-    background-color: var(--bg-dark); /* Wahi dark purple/black theme */
+    padding: 80px 0;
+    background-color: var(--bg-dark);
 }
 
-/* Header & H1 Styling */
+/* Header Spacing */
 .skills-header-block {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    padding: 0 20px;
 }
 
 .main-skill-heading {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     color: var(--text-main);
     margin-bottom: 25px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .intro-summary {
     color: var(--text-dim);
     font-size: 1.15rem;
+    line-height: 1.8;
     max-width: 850px;
     margin: 0 auto;
-    line-height: 1.7;
 }
 
-/* Horizontal Divider */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
-    margin: 45px 0;
-}
-
-/* Section Cards (IT & Digital Marketing) */
+/* Main Category Cards (IT & Digital Marketing) */
 .skill-category-block {
-    background: #1e112b; /* Deep purple shade jo tumhari theme ko suit kare */
+    background: #160a22; /* Deep theme background */
     border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 35px;
-    margin-bottom: 35px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-radius: 20px;
+    padding: 50px 40px; /* Badi padding taaki ghutan na ho */
+    margin-bottom: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
-.skill-category-block:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary); /* Purple hover effect */
-}
-
-.category-title {
-    color: white; /* Wahi signature purple color */
-    font-size: 1.85rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-/* Content Placeholder (Pari, tumhara manual text yahan style hoga) */
-.content-placeholder {
-    color: var(--text-main);
-    font-size: 1.05rem;
-    line-height: 1.9;
-}
-
-.content-placeholder p {
-    margin-bottom: 18px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .skill-category-block {
-        padding: 20px;
-    }
-    
-    .main-skill-heading {
-        font-size: 1.6rem;
-    }
-}
-
-/* --- Padding aur Spacing Fix --- */
-
-/* 1. Har block ke beech ki spacing */
-.skill-category-block {
-    background: #1e112b; 
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 50px 40px; /* Padding badha di hai (Top-Bottom 50px, Left-Right 40px) */
-    margin-bottom: 60px; /* Do blocks ke beech zyada gap */
-    transition: all 0.3s ease;
-}
-
-/* 2. Heading ke niche gap taaki wo alag se dikhe */
 .category-title {
     color: var(--primary);
     font-size: 2.2rem;
-    margin-bottom: 35px; /* Heading aur text ke beech gap */
+    margin-bottom: 40px;
     font-weight: 700;
-    border-bottom: 1px solid rgba(168, 85, 247, 0.2); /* Halka sa underline separation ke liye */
+    text-align: left;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
     padding-bottom: 15px;
 }
 
-/* 3. Paragraphs ke beech gap */
-.content-placeholder p {
-    margin-bottom: 25px; /* Har paragraph ke baad achha gap */
-    line-height: 1.9;    /* Text ko thoda khula-khula dikhane ke liye */
+/* --- Language Specific Sub-Cards (Java, Python etc.) --- */
+.language-card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 35px; /* Agli heading se safe distance */
+}
+
+.language-card:last-child {
+    margin-bottom: 0;
+}
+
+.language-name {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.language-desc p {
     color: var(--text-main);
-}
-
-/* 4. Roles section ko alag se highlight karne ke liye gap */
-.roles-container {
-    margin-top: 40px; /* Description khatam hone ke kaafi baad roles shuru honge */
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.03); /* Bahut subtle alag background */
-    border-radius: 12px;
-    border: 1px dashed var(--border);
-}
-
-/* 5. List items ke beech spacing */
-.roles-list li {
-    margin-bottom: 12px; /* Har role ke beech gap */
+    line-height: 1.8;
+    margin-bottom: 20px;
     font-size: 1.05rem;
+}
+
+/* Roles Container */
+.roles-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(168, 85, 247, 0.3);
+}
+
+.roles-container strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.roles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.roles-list li {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.roles-list li::before {
+    content: "▹";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .skill-category-block {
+        padding: 30px 20px;
+    }
+    .category-title {
+        font-size: 1.8rem;
+    }
 }

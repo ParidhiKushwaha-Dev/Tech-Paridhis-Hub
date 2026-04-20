@@ -1366,3 +1366,47 @@ a.logo-text-link:active {
         font-size: 1.6rem;
     }
 }
+
+/* --- Padding aur Spacing Fix --- */
+
+/* 1. Har block ke beech ki spacing */
+.skill-category-block {
+    background: #1e112b; 
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 50px 40px; /* Padding badha di hai (Top-Bottom 50px, Left-Right 40px) */
+    margin-bottom: 60px; /* Do blocks ke beech zyada gap */
+    transition: all 0.3s ease;
+}
+
+/* 2. Heading ke niche gap taaki wo alag se dikhe */
+.category-title {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 35px; /* Heading aur text ke beech gap */
+    font-weight: 700;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2); /* Halka sa underline separation ke liye */
+    padding-bottom: 15px;
+}
+
+/* 3. Paragraphs ke beech gap */
+.content-placeholder p {
+    margin-bottom: 25px; /* Har paragraph ke baad achha gap */
+    line-height: 1.9;    /* Text ko thoda khula-khula dikhane ke liye */
+    color: var(--text-main);
+}
+
+/* 4. Roles section ko alag se highlight karne ke liye gap */
+.roles-container {
+    margin-top: 40px; /* Description khatam hone ke kaafi baad roles shuru honge */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.03); /* Bahut subtle alag background */
+    border-radius: 12px;
+    border: 1px dashed var(--border);
+}
+
+/* 5. List items ke beech spacing */
+.roles-list li {
+    margin-bottom: 12px; /* Har role ke beech gap */
+    font-size: 1.05rem;
+}

@@ -1339,7 +1339,7 @@ a.logo-text-link:active {
 }
 
 .category-title {
-    color: var(--primary); /* Wahi signature purple color */
+    color: white; /* Wahi signature purple color */
     font-size: 1.85rem;
     margin-bottom: 20px;
     font-weight: 600;

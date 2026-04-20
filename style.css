@@ -41,11 +41,11 @@ body {
 
 /* Logo aur Website Name (Link) ka style */
 .logo-text-link {
-    text-decoration: none; /* Sabse pehle underline ko hataya */
-    color: white !important; /* Text ko white set kiya aur ensure kiya ki override ho */
-    font-size: 2.5rem; /* Text size (optional, agar kam ho) */
-    font-weight: 700; /* Text ko bold banaya */
-    transition: color 0.3s ease; /* Smooth behavior jab color change ho (agar hum karen) */
+    text-decoration: none;
+    color: white !important;
+    font-size: 1.2rem; /* 2.5rem tha — resize karke navbar ke sath match kiya */
+    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 /* Jab mouse text par jaye (Hover state) */
@@ -580,319 +580,60 @@ body {
 
 
 
-/* ============================================
-   SKILLS PAGE - DEDICATED CSS
-   Site Theme: Dark Purple (#150622) + Violet (#a855f7)
-   File: skills-page.css
-   Link karo: <link rel="stylesheet" href="skills-page.css">
-   (style.css ke BAAD link karo)
-   ============================================ */
+/* --- Skills Page Specific CSS --- */
 
-/* -----------------------------------------------
-   SECTION 1: Skills Detail Section (Top wala bada section)
-   .skills-detail-section → .container → .skill-category-block
-   ----------------------------------------------- */
-
-.skills-detail-section {
-    padding: 80px 0;
-    background-color: #150622; /* Site ka main dark purple */
+.root {
+    --primary-blue: #38bdf8;
+    --accent-indigo: #818cf8;
+    --dark-bg: #e2e6ed;
+    --card-bg: #1e293b;
+    --text-slate: #94a3b8;
 }
-
-.skills-detail-section .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 5% 40px;
-}
-
-/* Page ka main heading */
-.main-skill-heading {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-/* Intro paragraph */
-.intro-summary {
-    color: #94a3b8;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 820px;
-    margin: 0 auto;
-}
-
-/* Header block center align */
-.skills-header-block {
-    text-align: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
-}
-
-/* Divider line */
-.section-divider {
-    border: none;
-    border-top: 1px solid #2d2d35;
-    margin: 40px 0;
-}
-
-/* -----------------------------------------------
-   SECTION 2: Category Block (sabse bada card)
-   ----------------------------------------------- */
-
-.skill-category-block {
-    background: #1a0b2e; /* Thoda aur gahra purple */
-    border: 1px solid #2d2d35;
-    border-radius: 20px;
-    padding: 50px 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-}
-
-.category-title {
-    color: #a855f7; /* Site ka primary violet */
-    font-size: 2rem;
-    margin-bottom: 40px;
-    font-weight: 700;
-    text-align: left;
-    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
-    padding-bottom: 15px;
-    line-height: 1.3;
-}
-
-/* -----------------------------------------------
-   SECTION 3: Individual Language Cards
-   (h3 wale skill blocks — DSA, Python, Java etc.)
-   ----------------------------------------------- */
-
-/* Har ek skill (h3 se shuru hone wala div) ek card ban jaata hai */
-.skill-category-block > div {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(168, 85, 247, 0.12);
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
-    transition: border-color 0.3s ease;
-}
-
-.skill-category-block > div:last-child {
-    margin-bottom: 0;
-}
-
-.skill-category-block > div:hover {
-    border-color: rgba(168, 85, 247, 0.4);
-}
-
-/* content-placeholder div ko card mat banao */
-.content-placeholder {
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 0 0 20px 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.content-placeholder p {
-    color: #94a3b8;
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-/* h3 = skill naam (DSA, Python, Java etc.) */
-.skill-category-block h3 {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-/* h4 = "Core Strength" heading */
-.skill-category-block h4 {
-    color: #a855f7;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-/* h4 ke baad wala Core Strength description */
-.skill-category-block h4 + p,
-.skill-category-block h4 ~ p {
-    color: #cbd5e1;
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-top: 0;
-}
-
-/* Paragraph text inside skill divs */
-.skill-category-block > div > span > p {
-    color: #cbd5e1;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-/* -----------------------------------------------
-   SECTION 4: Roles Container (inside each skill)
-   ----------------------------------------------- */
-
-.roles-container {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed rgba(168, 85, 247, 0.25);
-}
-
-.roles-container > strong {
-    color: #a855f7;
-    display: block;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-/* Roles list — grid layout */
-.roles-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.roles-list li {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    position: relative;
-    padding-left: 22px;
-    line-height: 1.5;
-}
-
-.roles-list li::before {
-    content: "▹";
-    color: #a855f7;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* Ordered list (webstack ke liye) */
-ol.roles-list {
-    counter-reset: none;
-}
-
-ol.roles-list li {
-    list-style: decimal;
-    padding-left: 5px;
-    margin-left: 20px;
-}
-
-ol.roles-list li::before {
-    display: none; /* numbered list ke liye arrow nahi chahiye */
-}
-
-/* -----------------------------------------------
-   SECTION 5: Digital Marketing Projects Section
-   (skills-detail-section ke baad wala <section>)
-   ----------------------------------------------- */
-
-section:has(.roles-container) {
-    background: #1a0b2e;
-    padding: 50px 5%;
-    border-top: 1px solid #2d2d35;
-}
-
-/* Fallback agar :has() kaam na kare */
-.skills-detail-section + section {
-    background: #1a0b2e;
-    padding: 50px 5%;
-    border-top: 1px solid #2d2d35;
-}
-
-.skills-detail-section + section .roles-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    border-top: none;
-    padding-top: 0;
-}
-
-.skills-detail-section + section h3 {
-    color: #a855f7;
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-/* -----------------------------------------------
-   SECTION 6: "My Tech Expertise" — .skills-page
-   (Yeh wala section light background se DARK banana hai)
-   ----------------------------------------------- */
 
 .skills-page {
-    background-color: #150622 !important; /* Light grey tha, ab dark purple */
-    padding: 80px 5%;
+    background-color: var(--dark-bg);
+    padding: 100px 20px;
     display: flex;
     justify-content: center;
-    min-height: auto;
+    min-height: 100vh;
 }
 
-.skills-page .content-wrapper {
+.content-wrapper {
     max-width: 1000px;
     width: 100%;
     text-align: center;
 }
 
-/* "My Tech Expertise" heading */
-.skills-page .main-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+.main-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 15px;
     color: #ffffff;
     letter-spacing: -1px;
 }
 
-/* "Tier-3 College se..." tagline */
-.skills-page .tagline {
-    font-size: 1.1rem;
-    color: #a855f7; /* Blue tha, ab purple — site se match */
+.tagline {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
     margin-bottom: 50px;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Technical Expertise heading */
-.skills-page h2 {
-    color: #ffffff;
-    font-size: 1.8rem;
-    margin-top: 60px;
-    margin-bottom: 10px;
-}
-
-.skills-page > .content-wrapper > p {
-    color: #94a3b8;
-    font-size: 1.05rem;
-    margin-bottom: 10px;
-}
-
-/* -----------------------------------------------
-   SECTION 7: Skill Tags
-   ----------------------------------------------- */
-
+/* Skills Tags Styling */
 .skills-flex {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .skill-tag {
-    background: rgba(168, 85, 247, 0.08); /* Blue tha, ab purple */
+    background: rgba(56, 189, 248, 0.05);
     color: #e2e8f0;
-    border: 1px solid rgba(168, 85, 247, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.3);
     padding: 12px 24px;
     border-radius: 12px;
     font-size: 0.95rem;
@@ -902,44 +643,40 @@ section:has(.roles-container) {
 }
 
 .skill-tag:hover {
-    background: #a855f7;
-    color: #ffffff;
+    background: var(--primary-blue);
+    color: var(--dark-bg);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
-    border-color: #a855f7;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    border-color: var(--primary-blue);
 }
 
-/* -----------------------------------------------
-   SECTION 8: Certification Cards Grid
-   ----------------------------------------------- */
-
+/* Certification Grid Styling */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 40px;
 }
 
 .cert-box {
-    background: #1e1132; /* Dark purple card */
+    background: var(--card-bg);
     padding: 40px 30px;
     border-radius: 24px;
-    border: 1px solid rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
 .cert-box:hover {
     transform: scale(1.05);
-    border-color: #a855f7;
-    box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
+    border-color: var(--accent-indigo);
+    box-shadow: 0 20px 40px rgba(251, 249, 249, 0.515);
 }
 
-/* Logo box inside cert card */
+/* Logo handling inside boxes */
 .logo-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(222, 239, 231, 0.918);
     width: 80px;
     height: 80px;
     margin: 0 auto 20px;
@@ -962,71 +699,36 @@ section:has(.roles-container) {
 
 .cert-box h3 {
     color: #f8fafc;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 8px;
 }
 
 .cert-box p {
-    color: #94a3b8;
-    font-size: 0.95rem;
+    color: var(--text-slate);
+    font-size: 1rem;
 }
 
-/* -----------------------------------------------
-   SECTION 9: Hinglish Quote
-   ----------------------------------------------- */
-
-.hinglish-quote {
-    margin-top: 60px;
-    padding: 0 20px;
-}
-
-.hinglish-quote blockquote {
-    color: #94a3b8;
-    font-size: 1.05rem;
-    font-style: italic;
-    border-left: 3px solid #a855f7;
-    padding: 10px 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
-    background: rgba(168, 85, 247, 0.05);
-    border-radius: 0 12px 12px 0;
-}
-
-/* -----------------------------------------------
-   SECTION 10: Responsive — Mobile Fix
-   ----------------------------------------------- */
-
-@media (max-width: 768px) {
-    .skill-category-block {
-        padding: 30px 20px;
+/* Responsive tweak */
+@media (max-width: 600px) {
+    .skills-flex {
+        gap: 8px;
     }
-
-    .category-title {
-        font-size: 1.6rem;
-    }
-
-    .skill-category-block > div {
-        padding: 22px 18px;
-    }
-
-    .roles-list {
-        grid-template-columns: 1fr; /* Mobile par single column */
-    }
-
-    .skills-page {
-        padding: 60px 5%;
-    }
-
-    .cert-grid {
-        grid-template-columns: 1fr;
-    }
-
     .skill-tag {
         padding: 8px 16px;
         font-size: 0.85rem;
     }
 }
+
+.footer-owner {
+    font-size: 0.85rem; /* "Curated with ❤️" waali line */
+}
+
+.nav-links, .footer-links ul {
+    list-style: none !important; /* Isse wo dots/bullets gayab ho jayenge */
+    padding: 0;
+    margin: 0;
+}
+
 /* --- Dedicated Tools Page CSS --- */
 
 /* 1. Page Layout */
@@ -1575,3 +1277,124 @@ section:has(.roles-container) {
     padding-top: 15px;
 }
 
+/* --- Final Skills Page Layout Fix --- */
+
+.skills-detail-section {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+}
+
+/* Header Spacing */
+.skills-header-block {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.main-skill-heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.intro-summary {
+    color: var(--text-dim);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Main Category Cards (IT & Digital Marketing) */
+.skill-category-block {
+    background: #160a22; /* Deep theme background */
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 50px 40px; /* Badi padding taaki ghutan na ho */
+    margin-bottom: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.category-title {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+    padding-bottom: 15px;
+}
+
+/* --- Language Specific Sub-Cards (Java, Python etc.) --- */
+.language-card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 35px; /* Agli heading se safe distance */
+}
+
+.language-card:last-child {
+    margin-bottom: 0;
+}
+
+.language-name {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.language-desc p {
+    color: var(--text-main);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+/* Roles Container */
+.roles-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(168, 85, 247, 0.3);
+}
+
+.roles-container strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.roles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.roles-list li {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.roles-list li::before {
+    content: "▹";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .skill-category-block {
+        padding: 30px 20px;
+    }
+    .category-title {
+        font-size: 1.8rem;
+    }
+}

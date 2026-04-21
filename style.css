@@ -1526,7 +1526,7 @@ section:has(.roles-container) {
 }
 
 .skills-detail-section + section h3 {
-    color: #a855f7;
+    color: #f7f5fa;
     font-size: 1.8rem;
     margin-bottom: 25px;
     font-weight: 700;

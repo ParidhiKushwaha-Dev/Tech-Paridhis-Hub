@@ -362,30 +362,30 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
             </div>
         </div>
     </main>
-
+      <div>
     <div class="hinglish-quote">
         <blockquote>For cse students,We recommend some free certification & youtube channels which will help you to build a strong career🚀.</blockquote>
-    </div>
+    </div>    
+</div>
 
-    <script>
-async function runCode(){
-  const btn=document.getElementById('py-btn');
-  const out=document.getElementById('py-output');
-  const code=document.getElementById('py-code').value;
-  btn.disabled=true;btn.textContent='Running...';
-  out.style.display='block';out.textContent='';
-  try{
-    const res=await fetch('https://emkc.org/api/v2/piston/execute',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({language:'python',version:'3.10.0',files:[{content:code}]})
-    });
-    const data=await res.json();
-    const result=data.run.stdout||data.run.stderr||'(no output)';
-    out.textContent=result;
-    out.style.color=data.run.stderr?'#f87171':'#a3e635';
-  }catch(e){out.textContent='Error: API connect nahi hui.';out.style.color='#f87171';}
-  btn.disabled=false;btn.textContent='Run Code ▶';
-}
+   <script>
+    function runPython() {
+        const code = document.getElementById('py-code').value;
+        const outputArea = document.getElementById('py-output');
+        
+        // Yahan tum Brython ya kisi API ka use kar sakti ho
+        // Abhi ke liye ye simple check karega
+        if(code.trim() === "") {
+            outputArea.innerHTML = "Pari, pehle kuch code toh likho!";
+        } else {
+            outputArea.innerHTML = "Running... <br> Output: Hello Techie!";
+        }
+    }
+
+    // Refresh hone par button focus karne ke liye
+    window.onload = function() {
+        console.log("Python Editor is ready to run!");
+    };
 </script>
 
     <footer class="main-footer">

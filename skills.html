@@ -87,6 +87,7 @@ I am TechPari and I am here to suggest you the latest skills which will help you
                             <li>Backend Development (Django/Flask) roles</li>
                         </ul>
                     </div>
+                    </div>
                     <!-- Python Editor -->
 <div class="py-editor-wrap">
   <h4>▶ Try Python — Run this code</h4>
@@ -98,6 +99,27 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
   <div id="py-output"></div>
   <div class="py-status">Piston API — free &amp; no login needed</div>
 </div>
+
+ <script>
+async function runCode(){
+  const btn=document.getElementById('py-btn');
+  const out=document.getElementById('py-output');
+  const code=document.getElementById('py-code').value;
+  btn.disabled=true;btn.textContent='Running...';
+  out.style.display='block';out.textContent='';
+  try{
+    const res=await fetch('https://emkc.org/api/v2/piston/execute',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({language:'python',version:'3.10.0',files:[{content:code}]})
+    });
+    const data=await res.json();
+    const result=data.run.stdout||data.run.stderr||'(no output)';
+    out.textContent=result;
+    out.style.color=data.run.stderr?'#f87171':'#a3e635';
+  }catch(e){out.textContent='Error: API connect nahi hui.';out.style.color='#f87171';}
+  btn.disabled=false;btn.textContent='Run Code ▶';
+}
+</script>
 
                 <!-- Java -->
                 <div>
@@ -112,7 +134,7 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
                             <li>Large-scale Enterprise Software Engineering</li>
                         </ul>
                     </div>
-
+                    </div>
                 <!-- SQL -->
                 <div>
                     <h3>SQL (The Database Bridge🌉):</h3>
@@ -125,7 +147,7 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
                             <li>Full Stack Developer</li>
                         </ul>
                     </div>
-                    
+                    </div>
                 <!-- Go & Rust -->
                 <div>
                     <h3>Go (Golang) & Rust:</h3>
@@ -139,8 +161,7 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
                             <li>Blockchain Development⛓️</li>
                         </ul>
                     </div>
-                    
-                </div>
+                      </div>
 
                 <!-- Webstack -->
                 <div>
@@ -159,7 +180,7 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
                             <li>Full Stack Developer</li>
                         </ul>
                     </div>
-                    
+                    </div>
 
                 <!-- Dev Projects -->
                 <div>
@@ -190,7 +211,6 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
             </div>
                 <div class="content-placeholder">
                     <p>These are not just an skills, These are the strategies for winning the battle of a career.</p>
-                </div>
 
                 <!--Seo-->
                  <div>
@@ -210,6 +230,7 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>SEO Manager</li>
                         </ul>
                     </div>   
+                 </div>
                 <!-- SMM & AI Automation -->
                 <div>
                     <h3>Social Media Marketing (SMM) & AI Automation:</h3>
@@ -221,6 +242,8 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>Content Creator</li>
                             <li>Community Manager</li>
                         </ul>
+                    </div>
+                </div>
 
                 <!-- AI Automation -->
                 <div>
@@ -234,7 +257,7 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>Automation Consultant</li>
                         </ul>
                     </div>
-
+                </div>
                 <!-- Content & Email Marketing -->
                 <div>
                     <h3>Content & Email Marketing:</h3>
@@ -247,6 +270,7 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>Content Strategist</li>
                         </ul>
                     </div>
+                </div>
     
                 <!-- GA4 & Google Ads -->
                 <div>
@@ -260,6 +284,7 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>Data Analyst</li>
                         </ul>
                     </div>
+                </div>
 
                 <!-- GEO -->
                 <div>
@@ -273,6 +298,9 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>Future Search Analyst</li>
                         </ul>
                     </div>
+                    </div>
+                    
+                </div>
                     
 
                 <!-- Digital Marketing Projects -->
@@ -383,26 +411,7 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
         </div>
     </footer>
 
-    <script>
-async function runCode(){
-  const btn=document.getElementById('py-btn');
-  const out=document.getElementById('py-output');
-  const code=document.getElementById('py-code').value;
-  btn.disabled=true;btn.textContent='Running...';
-  out.style.display='block';out.textContent='';
-  try{
-    const res=await fetch('https://emkc.org/api/v2/piston/execute',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({language:'python',version:'3.10.0',files:[{content:code}]})
-    });
-    const data=await res.json();
-    const result=data.run.stdout||data.run.stderr||'(no output)';
-    out.textContent=result;
-    out.style.color=data.run.stderr?'#f87171':'#a3e635';
-  }catch(e){out.textContent='Error: API connect nahi hui.';out.style.color='#f87171';}
-  btn.disabled=false;btn.textContent='Run Code ▶';
-}
-</script>
+   
 
 </body>
 </html>

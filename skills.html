@@ -102,26 +102,7 @@ print(f"Welcome to TechPari! {name}😎")</textarea>
 </div>
 </div>
 
- <script>
-async function runCode(){
-  const btn=document.getElementById('py-btn');
-  const out=document.getElementById('py-output');
-  const code=document.getElementById('py-code').value;
-  btn.disabled=true;btn.textContent='Running...';
-  out.style.display='block';out.textContent='';
-  try{
-    const res=await fetch('https://emkc.org/api/v2/piston/execute',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({language:'python',version:'3.10.0',files:[{content:code}]})
-    });
-    const data=await res.json();
-    const result=data.run.stdout||data.run.stderr||'(no output)';
-    out.textContent=result;
-    out.style.color=data.run.stderr?'#f87171':'#a3e635';
-  }catch(e){out.textContent='Error: API connect nahi hui.';out.style.color='#f87171';}
-  btn.disabled=false;btn.textContent='Run Code ▶';
-}
-</script>
+
 
                 <!-- Java -->
                 <div>
@@ -203,9 +184,6 @@ async function runCode(){
     <!-- Digital Marketing Skills Section -->
     <section class="skills-detail-section">
         <div class="container">
-
-            <div class="skills-header-block">
-
             <hr class="section-divider">
 
             <div class="skill-category-block">
@@ -219,11 +197,12 @@ async function runCode(){
                     <h3>SEO(Search Engine Optimization): </h3>
                     <p>Seo is a search engine optimization which will help you to get organic(free) traffic & it also helps in ranking high in search engines.</p>
                     <p>SEO(Search Engine Optimization): Help to rank on top position on search engines and  also help to get organic traffic.<br>
-Owner: “My sales are decreasing📉. What can I do?😥”<br>
-SEO Expert: Hey! An SEO expert will help you to increase📈 your sales by doing on page & off page optimization.<br>
-Owner: What is this on & off page optimization?<br> 
-SEO Expert: It is a process which has been done on your own website(meta tags, h1, content) & off-page optimization which have been done on other websites like guest posting & link building.
-</p>
+                    <ol class="roles-list">  
+                     <li>Owner: “My sales are decreasing📉. What can I do?😥”</li>
+                      <li>SEO Expert: Hey! An SEO expert will help you to increase📈 your sales by doing on page & off page optimization.</li>
+                      <li>Owner: What is this on & off page optimization?</li> 
+                      <li>SEO Expert: It is a process which has been done on your own website(meta tags, h1, content) & off-page optimization which have been done on other websites like guest posting & link building.</li>
+</p>                 </ol>
                     <div class="roles-container">
                         <strong>Roles for SEO</strong>
                         <ul class="roles-list">
@@ -300,13 +279,12 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                             <li>Future Search Analyst</li>
                         </ul>
                     </div>
-                    </div>
+                </div>
                     
                 </div>
                     
                   </div>
                 <!-- Digital Marketing Projects -->
-                 <section>
                 <div>
                     <h3>Digital Marketing Projects jo resume strong banate hain💼:</h3>
                     <p>Theory se zyada projects matter karte hain. Yeh projects karo aur apna portfolio banao jo directly HR ko impress kare.</p>
@@ -317,8 +295,7 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
                         <li>Lead Generation Landing Page & Funnel Design: Help you to generate leads for the businesses & it also shows that you are eligible to generate leads for any businesses.</li>
                     </ul>
                 </div>
-                 </section>
-
+               
             </div><!-- /.skill-category-block -->
         </div><!-- /.container -->
     </section>
@@ -371,6 +348,27 @@ SEO Expert: It is a process which has been done on your own website(meta tags, h
     <div class="hinglish-quote">
         <blockquote>For cse students,We recommend some free certification & youtube channels which will help you to build a strong career🚀.</blockquote>
     </div>
+
+    <script>
+async function runCode(){
+  const btn=document.getElementById('py-btn');
+  const out=document.getElementById('py-output');
+  const code=document.getElementById('py-code').value;
+  btn.disabled=true;btn.textContent='Running...';
+  out.style.display='block';out.textContent='';
+  try{
+    const res=await fetch('https://emkc.org/api/v2/piston/execute',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({language:'python',version:'3.10.0',files:[{content:code}]})
+    });
+    const data=await res.json();
+    const result=data.run.stdout||data.run.stderr||'(no output)';
+    out.textContent=result;
+    out.style.color=data.run.stderr?'#f87171':'#a3e635';
+  }catch(e){out.textContent='Error: API connect nahi hui.';out.style.color='#f87171';}
+  btn.disabled=false;btn.textContent='Run Code ▶';
+}
+</script>
 
     <footer class="main-footer">
         <div class="footer-container">

@@ -1743,3 +1743,42 @@ section:has(.roles-container) {
 .py-run-btn:hover{background:#9333ea}
 #py-output{margin-top:14px;background:#0d0014;border:1px solid rgba(168,85,247,0.15);border-radius:10px;padding:14px;font-family:monospace;font-size:0.9rem;color:#a3e635;min-height:50px;white-space:pre-wrap;display:none}
 .py-status{font-size:0.8rem;color:#94a3b8;margin-top:8px}
+
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.faq-item {
+    background: #251238; /* Dark purple shade */
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #9333ea;
+    color: white;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    list-style: none; /* Default arrow hide karne ke liye */
+    font-size: 1.1rem;
+    }
+
+.faq-item summary::after {
+    content: "▼"; /* Click karne ka sign */
+    float: right;
+    font-size: 0.8rem;
+}
+
+.faq-item[open] summary::after {
+    content: "▲"; /* Khulne par arrow change */
+}
+
+.faq-item p {
+    margin-top: 15px;
+    color: #cbd5e1;
+    border-top: 1px solid #475569;
+    padding-top: 15px;
+}

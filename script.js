@@ -1,43 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Buttons ko select karo
+document.addEventListener('DOMContentLoaded', () => {
     const btnIT = document.getElementById('btn-it');
     const btnDM = document.getElementById('btn-dm');
+    const itGrid = document.getElementById('it-jobs');
+    const dmGrid = document.getElementById('digital-marketing');
 
-    // IT Button click event
-    if(btnIT) {
-        btnIT.addEventListener('click', function() {
-            showTab('it-jobs', this);
-        });
+    // Tab Switching Logic
+    function switchTab(showId, hideId, activeBtn, inactiveBtn) {
+        document.getElementById(showId).style.display = 'grid';
+        document.getElementById(hideId).style.display = 'none';
+        activeBtn.classList.add('active');
+        inactiveBtn.classList.remove('active');
     }
 
-    // DM Button click event
-    if(btnDM) {
-        btnDM.addEventListener('click', function() {
-            showTab('digital-marketing', this);
-        });
+    if(btnIT && btnDM) {
+        btnIT.addEventListener('click', () => switchTab('it-jobs', 'digital-marketing', btnIT, btnDM));
+        btnDM.addEventListener('click', () => switchTab('digital-marketing', 'it-jobs', btnDM, btnIT));
     }
 
-    // View Roadmap buttons ke liye
-    const viewButtons = document.querySelectorAll('.btn-view');
-    viewButtons.forEach(button => {
+    // "View Roadmap" buttons ke liye logic
+    document.querySelectorAll('.btn-view').forEach(button => {
         button.addEventListener('click', function() {
-            const role = this.parentElement.querySelector('h3').innerText;
-            alert("Pari, " + role + " ka roadmap jald aa raha hai! ✨");
+            const title = this.parentElement.querySelector('h3').innerText;
+            alert("Pari, " + title + " ka roadmap jald aa raha hai! ✨");
         });
     });
 });
-
-function showTab(tabId, btn) {
-    document.querySelectorAll('.roadmap-grid').forEach(grid => {
-        grid.style.display = 'none';
-        grid.classList.remove('active');
-    });
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    
-    const target = document.getElementById(tabId);
-    if(target) {
-        target.style.display = 'grid';
-        target.classList.add('active');
-    }
-    btn.classList.add('active');
-}

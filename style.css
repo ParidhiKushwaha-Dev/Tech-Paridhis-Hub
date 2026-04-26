@@ -421,6 +421,10 @@ body {
     box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
 }
 
+#digital-marketing { 
+    display: none; /* By default isse hide rakhein */
+}
+
 /* Grid & Cards - Roadmap Specific */
 .roadmap-page .roadmap-grid {
     display: none; /* JS handle karega display: grid */

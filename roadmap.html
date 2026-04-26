@@ -70,6 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
     <script>
+    // Tab switch karne ke liye function
     function showTab(tabId, btn) {
         document.querySelectorAll('.roadmap-grid').forEach(grid => {
             grid.classList.remove('active');
@@ -81,8 +82,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.getElementById(tabId).classList.add('active');
         btn.classList.add('active');
     }
-</script>
 
+    // Button click handle karne ke liye naya function
+    function openPath(pathName) {
+        // Filhal ye alert dikhayega, baad mein tum yahan links daal sakti ho
+        alert("Opening Roadmap for: " + pathName);
+        
+        /* Agar tum chahti ho ki naya page khule, toh aise likho:
+        window.location.href = pathName.toLowerCase().replace(/ /g, "-") + ".html"; 
+        */
+    }
+</script>
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">

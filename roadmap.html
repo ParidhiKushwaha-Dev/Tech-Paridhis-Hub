@@ -16,40 +16,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-P2F9354T');</script>
 <!-- End Google Tag Manager -->
 
-
-<script>
-    // 1. Tab Switch karne wala function
-    function showTab(tabId, btn) {
-        // Saare grids ko hide karo
-        document.querySelectorAll('.roadmap-grid').forEach(grid => {
-            grid.classList.remove('active');
-            grid.style.display = 'none'; // Forcefully hide
-        });
-        
-        // Saare buttons se active class hatao
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        
-        // Selected grid dikhao
-        const activeGrid = document.getElementById(tabId);
-        activeGrid.style.display = 'grid'; // Grid layout apply karo
-        activeGrid.classList.add('active');
-        
-        // Button ko highlight karo
-        btn.classList.add('active');
-    }
-
-    // 2. Button Click handle karne wala function (Jo missing tha!)
-    function openPath(pathName) {
-        console.log("Button Clicked for:", pathName);
-        alert("Hey! " + pathName + " ka detailed roadmap jald hi upload hoga. ✨");
-    }
-
-    // Page load hote hi IT Jobs dikhane ke liye (Optional par accha hai)
-    window.onload = function() {
-        const firstBtn = document.querySelector('.tab-btn.active');
-        if(firstBtn) showTab('it-jobs', firstBtn);
-    };
-</script>
 </head>
 <body class="roadmap-page">
    <!-- Google Tag Manager (noscript) -->

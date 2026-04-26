@@ -70,27 +70,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
     <script>
-    // Tab switch karne ke liye function
+    // Page load hote hi IT Jobs dikhane ke liye
+    window.onload = function() {
+        showTab('it-jobs', document.querySelector('.tab-btn.active'));
+    };
+
     function showTab(tabId, btn) {
+        // Saare grids ko chhupao
         document.querySelectorAll('.roadmap-grid').forEach(grid => {
-            grid.classList.remove('active');
             grid.style.display = 'none';
+            grid.classList.remove('active');
         });
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         
-        document.getElementById(tabId).style.display = 'grid';
-        document.getElementById(tabId).classList.add('active');
-        btn.classList.add('active');
+        // Saare buttons se active class hatao
+        document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('active');
+        });
+        
+        // Sirf selected grid dikhao
+        const selectedGrid = document.getElementById(tabId);
+        if (selectedGrid) {
+            selectedGrid.style.display = 'grid';
+            selectedGrid.classList.add('active');
+        }
+        
+        // Button ko active karo
+        if (btn) {
+            btn.classList.add('active');
+        }
     }
 
-    // Button click handle karne ke liye naya function
+    // Is function ki wajah se button click nahi ho raha tha
     function openPath(pathName) {
-        // Filhal ye alert dikhayega, baad mein tum yahan links daal sakti ho
-        alert("Opening Roadmap for: " + pathName);
+        console.log("Button clicked for:", pathName);
+        alert("Pari, " + pathName + " ka detailed roadmap jaldi hi update hoga! ✨");
         
-        /* Agar tum chahti ho ki naya page khule, toh aise likho:
-        window.location.href = pathName.toLowerCase().replace(/ /g, "-") + ".html"; 
-        */
+        // Agar tumhare paas specific pages hain toh yahan redirect kar sakti ho:
+        // window.location.href = "roadmaps/" + pathName.toLowerCase().replace(/ /g, "-") + ".html";
     }
 </script>
     <footer class="main-footer">

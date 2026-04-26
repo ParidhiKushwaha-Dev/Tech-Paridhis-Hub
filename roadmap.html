@@ -15,6 +15,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-P2F9354T');</script>
 <!-- End Google Tag Manager -->
+
+
+<script>
+    // Page load hote hi IT Jobs dikhane ke liye
+    window.onload = function() {
+        showTab('it-jobs', document.querySelector('.tab-btn.active'));
+    };
+
+    function showTab(tabId, btn) {
+        // Saare grids ko chhupao
+        document.querySelectorAll('.roadmap-grid').forEach(grid => {
+            grid.style.display = 'none';
+            grid.classList.remove('active');
+        });
+        
+        // Saare buttons se active class hatao
+        document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('active');
+        });
+        
+        // Sirf selected grid dikhao
+        const selectedGrid = document.getElementById(tabId);
+        if (selectedGrid) {
+            selectedGrid.style.display = 'grid';
+            selectedGrid.classList.add('active');
+        }
+        
+        // Button ko active karo
+        if (btn) {
+            btn.classList.add('active');
+        }
+    }
+
+    // Is function ki wajah se button click nahi ho raha tha
+    function openPath(pathName) {
+        console.log("Button clicked for:", pathName);
+        alert("Pari, " + pathName + " ka detailed roadmap jaldi hi update hoga! ✨");
+        
+        // Agar tumhare paas specific pages hain toh yahan redirect kar sakti ho:
+        // window.location.href = "roadmaps/" + pathName.toLowerCase().replace(/ /g, "-") + ".html";
+    }
+</script>
 </head>
 <body class="roadmap-page">
    <!-- Google Tag Manager (noscript) -->
@@ -69,46 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     
-    <script>
-    // Page load hote hi IT Jobs dikhane ke liye
-    window.onload = function() {
-        showTab('it-jobs', document.querySelector('.tab-btn.active'));
-    };
 
-    function showTab(tabId, btn) {
-        // Saare grids ko chhupao
-        document.querySelectorAll('.roadmap-grid').forEach(grid => {
-            grid.style.display = 'none';
-            grid.classList.remove('active');
-        });
-        
-        // Saare buttons se active class hatao
-        document.querySelectorAll('.tab-btn').forEach(b => {
-            b.classList.remove('active');
-        });
-        
-        // Sirf selected grid dikhao
-        const selectedGrid = document.getElementById(tabId);
-        if (selectedGrid) {
-            selectedGrid.style.display = 'grid';
-            selectedGrid.classList.add('active');
-        }
-        
-        // Button ko active karo
-        if (btn) {
-            btn.classList.add('active');
-        }
-    }
-
-    // Is function ki wajah se button click nahi ho raha tha
-    function openPath(pathName) {
-        console.log("Button clicked for:", pathName);
-        alert("Pari, " + pathName + " ka detailed roadmap jaldi hi update hoga! ✨");
-        
-        // Agar tumhare paas specific pages hain toh yahan redirect kar sakti ho:
-        // window.location.href = "roadmaps/" + pathName.toLowerCase().replace(/ /g, "-") + ".html";
-    }
-</script>
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">

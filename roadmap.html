@@ -18,44 +18,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script>
-    // Page load hote hi IT Jobs dikhane ke liye
-    window.onload = function() {
-        showTab('it-jobs', document.querySelector('.tab-btn.active'));
-    };
-
+    // 1. Tab Switch karne wala function
     function showTab(tabId, btn) {
-        // Saare grids ko chhupao
+        // Saare grids ko hide karo
         document.querySelectorAll('.roadmap-grid').forEach(grid => {
-            grid.style.display = 'none';
             grid.classList.remove('active');
+            grid.style.display = 'none'; // Forcefully hide
         });
         
         // Saare buttons se active class hatao
-        document.querySelectorAll('.tab-btn').forEach(b => {
-            b.classList.remove('active');
-        });
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         
-        // Sirf selected grid dikhao
-        const selectedGrid = document.getElementById(tabId);
-        if (selectedGrid) {
-            selectedGrid.style.display = 'grid';
-            selectedGrid.classList.add('active');
-        }
+        // Selected grid dikhao
+        const activeGrid = document.getElementById(tabId);
+        activeGrid.style.display = 'grid'; // Grid layout apply karo
+        activeGrid.classList.add('active');
         
-        // Button ko active karo
-        if (btn) {
-            btn.classList.add('active');
-        }
+        // Button ko highlight karo
+        btn.classList.add('active');
     }
 
-    // Is function ki wajah se button click nahi ho raha tha
+    // 2. Button Click handle karne wala function (Jo missing tha!)
     function openPath(pathName) {
-        console.log("Button clicked for:", pathName);
-        alert("Pari, " + pathName + " ka detailed roadmap jaldi hi update hoga! ✨");
-        
-        // Agar tumhare paas specific pages hain toh yahan redirect kar sakti ho:
-        // window.location.href = "roadmaps/" + pathName.toLowerCase().replace(/ /g, "-") + ".html";
+        console.log("Button Clicked for:", pathName);
+        alert("Hey! " + pathName + " ka detailed roadmap jald hi upload hoga. ✨");
     }
+
+    // Page load hote hi IT Jobs dikhane ke liye (Optional par accha hai)
+    window.onload = function() {
+        const firstBtn = document.querySelector('.tab-btn.active');
+        if(firstBtn) showTab('it-jobs', firstBtn);
+    };
 </script>
 </head>
 <body class="roadmap-page">

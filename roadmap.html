@@ -28,25 +28,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="script.js" defer></script>
 
 <style>
-    /* Sirf isi page (roadmap-page) ke liye colors badlenge */
+    /* Sirf is page ke liye orange theme */
     .roadmap-page {
-        --primary: #ff8c00;        /* Orange color */
-        --primary-hover: #e67e00;  /* Darker Orange hover ke liye */
+        --primary: #ff8c00 !important; /* Orange */
+        --primary-hover: #e67e00 !important;
     }
 
-    /* Buttons aur active tabs ko force karne ke liye */
-    .roadmap-page .tab-btn.active {
-        background-color: var(--primary) !important;
-        border-color: var(--primary) !important;
+    /* List ko ek ke niche ek (Vertical) karne ke liye */
+    .roles-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px;
+        padding-left: 20px;
+        margin-top: 15px;
+        list-style-type: disc !important;
     }
 
-    .roadmap-page .btn-view {
-        background-color: var(--primary) !important;
+    .roles-list li {
+        display: list-item !important;
+        color: #ffffff;
+        font-size: 0.95rem;
     }
 
-    /* List ke andar ke strong text ko bhi orange karne ke liye */
-    .roadmap-page .roles-container strong {
-        color: var(--primary);
+    .roles-container strong {
+        color: #ff8c00; /* Orange Heading */
+        font-size: 1.1rem;
+    }
+
+    /* Active Button Style */
+    .tab-btn.active {
+        background-color: #ff8c00 !important;
+        border-color: #ff8c00 !important;
+        color: white;
     }
 </style>
 </head>
@@ -83,22 +96,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button id="btn-dm" class="tab-btn">Digital Marketing</button>
         </div>
            <div id="it-jobs" class="roles-container">
-                        <strong>DSA is used in</strong>
-                        <ul class="roles-list">
-                            <li>SDE (Software Development Engineer) roles</li>
-                            <li>In FAANG Companies Interviews</li>
-                            <li>For Backend Optimization</li>
-                        </ul>
-                    </div>
+    <strong>DSA is used in (IT)</strong>
+    <ul class="roles-list">
+        <li>SDE (Software Development Engineer) roles</li>
+        <li>In FAANG Companies Interviews</li>
+        <li>For Backend Optimization</li>
+    </ul>
+</div>
 
-                    <div id="digital-marketing" class="roles-container">
-                        <strong>DSA is used in</strong>
-                        <ul class="roles-list">
-                            <li>SDE (Software Development Engineer) roles</li>
-                            <li>In FAANG Companies Interviews</li>
-                            <li>For Backend Optimization</li>
-                        </ul>
-                    </div>
+<div id="digital-marketing" class="roles-container" style="display: none;">
+    <strong>SEO is used in (Digital Marketing)</strong>
+    <ul class="roles-list">
+        <li>Ranking websites on Google</li>
+        <li>Technical SEO Audits</li>
+        <li>Content Strategy & Optimization</li>
+    </ul>
+</div>
 
         <div id="it-jobs" class="roadmap-grid active">
             <div class="card"><h3>AI/ML Engineer</h3><button class="btn-view">View Roadmap →</button></div>

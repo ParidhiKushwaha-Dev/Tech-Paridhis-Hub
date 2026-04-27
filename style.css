@@ -1788,15 +1788,3 @@ section:has(.roles-container) {
 }
 
 
-.roles-list {
-        display: flex;
-        flex-direction: column; /* Isse items ek ke niche ek aayenge */
-        gap: 8px;
-        padding-left: 20px;
-        list-style-type: disc; /* Taaki bullets dikhein */
-    }
-
-    .roles-list li {
-        display: list-item; /* Bullets wapas lane ke liye */
-        color: var(--text-main);
-    }

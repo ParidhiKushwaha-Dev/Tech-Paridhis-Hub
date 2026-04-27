@@ -26,6 +26,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <script src="script.js" defer></script>
+
+<style>
+    /* Sirf isi page (roadmap-page) ke liye colors badlenge */
+    .roadmap-page {
+        --primary: #ff8c00;        /* Orange color */
+        --primary-hover: #e67e00;  /* Darker Orange hover ke liye */
+    }
+
+    /* Buttons aur active tabs ko force karne ke liye */
+    .roadmap-page .tab-btn.active {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+    }
+
+    .roadmap-page .btn-view {
+        background-color: var(--primary) !important;
+    }
+
+    /* List ke andar ke strong text ko bhi orange karne ke liye */
+    .roadmap-page .roles-container strong {
+        color: var(--primary);
+    }
+</style>
 </head>
 <body class="roadmap-page">
    <!-- Google Tag Manager (noscript) -->
@@ -68,6 +91,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </ul>
                     </div>
 
+                    <div id="digital-marketing" class="roles-container">
+                        <strong>DSA is used in</strong>
+                        <ul class="roles-list">
+                            <li>SDE (Software Development Engineer) roles</li>
+                            <li>In FAANG Companies Interviews</li>
+                            <li>For Backend Optimization</li>
+                        </ul>
+                    </div>
+
         <div id="it-jobs" class="roadmap-grid active">
             <div class="card"><h3>AI/ML Engineer</h3><button class="btn-view">View Roadmap →</button></div>
             <div class="card"><h3>DevOps Engineer</h3><button class="btn-view">View Roadmap →</button></div>
@@ -77,14 +109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="card"><h3>Data Scientist</h3><button class="btn-view">View Roadmap →</button></div>
         </div>
 
-        <div id="digital-marketing" class="roles-container">
-                        <strong>DSA is used in</strong>
-                        <ul class="roles-list">
-                            <li>SDE (Software Development Engineer) roles</li>
-                            <li>In FAANG Companies Interviews</li>
-                            <li>For Backend Optimization</li>
-                        </ul>
-                    </div>
+        
 
         <div id="digital-marketing" class="roadmap-grid">
             <div class="card"><h3>Performance Marketing</h3><button class="btn-view">View Roadmap →</button></div>

@@ -17,3 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         btnDM.addEventListener('click', () => switchTab('digital-marketing', 'it-jobs', btnDM, btnIT));
     }
 })
+
+// roadmap.html ke buttons ke liye
+document.querySelectorAll('.btn-view').forEach(button => {
+    button.addEventListener('click', function() {
+        const title = this.parentElement.querySelector('h3').innerText;
+        localStorage.setItem('selectedJob', title);
+        window.location.href = 'path-details.html';
+    });
+});

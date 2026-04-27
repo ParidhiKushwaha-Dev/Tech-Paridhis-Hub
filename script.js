@@ -28,10 +28,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// script.js mein switchTab function ko aise update karein
-function switchTab(showId, hideId, activeBtn, inactiveBtn) {
-    document.getElementById(showId).style.display = 'block'; // 'grid' ki jagah 'block'
-    document.getElementById(hideId).style.display = 'none';
-    activeBtn.classList.add('active');
-    inactiveBtn.classList.remove('active');
-}

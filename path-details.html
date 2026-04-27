@@ -130,14 +130,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ]
     };
 
+    // 2. Ab memory (localStorage) se data nikal kar page par dikhayenge
     document.addEventListener('DOMContentLoaded', function() {
         const job = localStorage.getItem('selectedJob');
 
         if (job && roadmapData[job]) {
+            // Title set karein
             document.getElementById('jobTitle').innerText = job;
+            
             const container = document.getElementById('roadmapContent');
-            container.innerHTML = "";
+            container.innerHTML = ""; // Purana content saaf karein
 
+            // Data ko HTML mein convert karke display karein
             roadmapData[job].forEach(step => {
                 let tagsHTML = step.tags.map(t => `<span class="tag">${t}</span>`).join('');
                 container.innerHTML += `
@@ -149,8 +153,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 `;
             });
         } else {
-            document.getElementById('jobTitle').innerText = "Oops! Roadmap Missing";
-            document.getElementById('roadmapContent').innerHTML = `<p style='text-align:center;'>Hum '${job}' par kaam kar rahe hain. Please check later!</p>`;
+            // Agar koi galat click kare ya data na mile
+            document.getElementById('jobTitle').innerText = "Roadmap Coming Soon! ✨";
+            document.getElementById('roadmapContent').innerHTML = `
+                <p style='text-align:center; color: #94a3b8;'>
+                    Hum '${job || "Is path"}' par kaam kar rahe hain. Please check back later!
+                </p>`;
         }
     });
 </script>

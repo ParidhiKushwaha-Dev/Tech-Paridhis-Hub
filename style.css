@@ -1786,3 +1786,12 @@ section:has(.roles-container) {
     border-top: 1px solid #475569;
     padding-top: 15px;
 }
+
+
+.roles-list {
+    display: flex;
+    flex-direction: column; /* Isse items ek ke niche ek aayenge */
+    gap: 10px; /* Thoda space dene ke liye */
+    list-style-type: disc; /* Bullets dikhane ke liye */
+    padding-left: 20px;
+}

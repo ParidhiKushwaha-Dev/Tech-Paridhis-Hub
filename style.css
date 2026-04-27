@@ -1788,3 +1788,33 @@ section:has(.roles-container) {
 }
 
 
+
+    /* Sirf is page ke liye variables */
+    .roadmap-page {
+        --primary: #ff8c00 !important; /* Orange */
+    }
+
+    /* List ko ek ke niche ek (Vertical) dikhane ke liye */
+    .roles-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .roles-list li {
+        display: list-item !important;
+        list-style-type: disc !important;
+        color: white; /* Text color */
+    }
+
+    .roles-container strong {
+        color: #ff8c00; /* Heading Orange */
+    }
+
+    /* Active tab button ko orange karne ke liye */
+    .tab-btn.active {
+        background-color: #ff8c00 !important;
+        border-color: #ff8c00 !important;
+    }

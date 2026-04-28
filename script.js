@@ -22,19 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // 1. Roadmap page ke buttons ko connect karne ke liye
-document.querySelectorAll('.btn-view').forEach(button => {
-    button.addEventListener('click', function() {
-        // Card ka title (Jaise 'Artificial Intelligence' ya 'SEO Specialist') uthayein
-        const title = this.parentElement.querySelector('h3').innerText;
-        // Isse browser ki memory mein save karein
-        localStorage.setItem('selectedJob', title);
-        // Naye page par bhej dein
-        window.location.href = 'path-details.html';
-    });
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // Check karein ki kya hum path-details page par hain
+    const container = document.getElementById('roadmapContent');
+    if (!container) return; 
 
-// 2. Path Details page par content dikhane ke liye
-if (window.location.pathname.includes('path-details.html')) {
+    // Memory se uthayein ki kaunsa button click hua tha
+    const selectedJob = localStorage.getItem('selectedJob');
+    const titleElement = document.getElementById('jobTitle');
     // YAHAN AAP APNA ORIGINAL CONTENT BHAR SAKTI HAIN
 
     const roadmapData = {
@@ -111,18 +106,17 @@ if (window.location.pathname.includes('path-details.html')) {
             { title: "Optimization", desc: "Scaling performance.", tags: ["Webhooks"] }
         ]
     };
-    const selected = localStorage.getItem('selectedJob');
-    const container = document.getElementById('roadmapContent');
-    const titleElement = document.getElementById('jobTitle');
-
-    if (selected && myContent[selected] && container) {
-        titleElement.innerText = selected;
-        container.innerHTML = myContent[selected].map(step => `
+    if (selectedJob && allRoadmaps[selectedJob]) {
+        titleElement.innerText = selectedJob;
+        container.innerHTML = allRoadmaps[selectedJob].map(step => `
             <div class="step">
                 <h3>${step.title}</h3>
                 <p>${step.desc}</p>
                 <div class="tags">${step.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
             </div>
         `).join('');
+    } else {
+        titleElement.innerText = "Roadmap Coming Soon!";
+        container.innerHTML = "<p style='text-align:center;'>Pari is working on this content...</p>";
     }
-}
+});

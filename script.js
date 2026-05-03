@@ -106,17 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
             { title: "Optimization", desc: "Scaling performance.", tags: ["Webhooks"] }
         ]
     };
-    if (selectedJob && allRoadmaps[selectedJob]) {
-        titleElement.innerText = selectedJob;
-        container.innerHTML = allRoadmaps[selectedJob].map(step => `
-            <div class="step">
+   
+   if (selectedJob && allRoadmaps[selectedJob]) {
+    titleElement.innerText = selectedJob;
+    
+    // Clear the container first so old roadmaps don't stick around
+    container.innerHTML = ""; 
+
+    // Ab naya content add karein
+    const roadmapHTML = allRoadmaps[selectedJob].map((step, index) => `
+        <div class="step-container">
+            <div class="step-number">${index + 1}</div>
+            <div class="step-content">
                 <h3>${step.title}</h3>
                 <p>${step.desc}</p>
-                <div class="tags">${step.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                <div class="tags">
+                    ${step.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                </div>
             </div>
-        `).join('');
-    } else {
-        titleElement.innerText = "Roadmap Coming Soon!";
-        container.innerHTML = "<p style='text-align:center;'>Pari is working on this content...</p>";
-    }
-});
+        </div>
+    `).join('');
+
+    container.innerHTML = roadmapHTML;
+}

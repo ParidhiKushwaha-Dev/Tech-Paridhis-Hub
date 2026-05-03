@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { title: "Optimization", desc: "Scaling performance.", tags: ["Webhooks"] }
         ]
     };
+})
    
    if (selectedJob && allRoadmaps[selectedJob]) {
     titleElement.innerText = selectedJob;
@@ -129,4 +130,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     container.innerHTML = roadmapHTML;
 }
-})

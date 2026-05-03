@@ -22,16 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // 1. Roadmap page ke buttons ko connect karne ke liye
-document.addEventListener('DOMContentLoaded', function() {
-    // Check karein ki kya hum path-details page par hain
+    if(btnIT && btnDM) {
+        btnIT.addEventListener('click', () => switchTab('it-jobs', 'digital-marketing', btnIT, btnDM));
+        btnDM.addEventListener('click', () => switchTab('digital-marketing', 'it-jobs', btnDM, btnIT));
+    }
+
+    // --- ROADMAP LOGIC START ---
     const container = document.getElementById('roadmapContent');
-    if (!container) return; 
-
-    // Memory se uthayein ki kaunsa button click hua tha
-    const selectedJob = localStorage.getItem('selectedJob');
     const titleElement = document.getElementById('jobTitle');
-    // YAHAN AAP APNA ORIGINAL CONTENT BHAR SAKTI HAIN
+    
+    // Agar hum path-details page par nahi hain, toh aage ka code mat chalao
+    if (!container || !titleElement) return; 
 
+    const selectedJob = localStorage.getItem('selectedJob');
     const allRoadmaps = {
         "AI/ML Engineer": [
             { title: "Mathematics", desc: "Linear Algebra, Calculus & Statistics.", tags: ["Maths", "Python"] },
@@ -106,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { title: "Optimization", desc: "Scaling performance.", tags: ["Webhooks"] }
         ]
     };
-})
+
    
    if (selectedJob && allRoadmaps[selectedJob]) {
     titleElement.innerText = selectedJob;
@@ -130,3 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     container.innerHTML = roadmapHTML;
 }
+else {
+        titleElement.innerText = "Roadmap Not Found";
+        container.innerHTML = "<p>Coming Soon!</p>";
+    }
+});

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const titleElement = document.getElementById('jobTitle');
     // YAHAN AAP APNA ORIGINAL CONTENT BHAR SAKTI HAIN
 
-    const roadmapData = {
+    const allRoadmaps = {
         "AI/ML Engineer": [
             { title: "Mathematics", desc: "Linear Algebra, Calculus & Statistics.", tags: ["Maths", "Python"] },
             { title: "Data Prep", desc: "Handling datasets with Pandas.", tags: ["NumPy", "Pandas"] },

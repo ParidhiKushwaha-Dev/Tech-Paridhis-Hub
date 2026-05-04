@@ -16,16 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnIT.addEventListener('click', () => switchTab('it-jobs', 'digital-marketing', btnIT, btnDM));
         btnDM.addEventListener('click', () => switchTab('digital-marketing', 'it-jobs', btnDM, btnIT));
     }
-})
-
-
-
-
 // 1. Roadmap page ke buttons ko connect karne ke liye
-    if(btnIT && btnDM) {
-        btnIT.addEventListener('click', () => switchTab('it-jobs', 'digital-marketing', btnIT, btnDM));
-        btnDM.addEventListener('click', () => switchTab('digital-marketing', 'it-jobs', btnDM, btnIT));
-    }
 
     // --- ROADMAP LOGIC START ---
     const container = document.getElementById('roadmapContent');

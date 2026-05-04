@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const btnIT = document.getElementById('btn-it');
     const btnDM = document.getElementById('btn-dm');
-    const itGrid = document.getElementById('it-jobs');
-    const dmGrid = document.getElementById('digital-marketing');
 
-    // Tab Switching Logic
     function switchTab(showId, hideId, activeBtn, inactiveBtn) {
         document.getElementById(showId).style.display = 'grid';
         document.getElementById(hideId).style.display = 'none';
@@ -16,14 +14,49 @@ document.addEventListener('DOMContentLoaded', () => {
         btnIT.addEventListener('click', () => switchTab('it-jobs', 'digital-marketing', btnIT, btnDM));
         btnDM.addEventListener('click', () => switchTab('digital-marketing', 'it-jobs', btnDM, btnIT));
     }
+
+    // ✅ Save job
+    const viewButtons = document.querySelectorAll('.btn-view');
+
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const jobName = this.getAttribute('data-job');
+            localStorage.setItem('selectedJob', jobName);
+        });
+    });
+
+});
 // 1. Roadmap page ke buttons ko connect karne ke liye
 
-    // --- ROADMAP LOGIC START ---
+    if (window.location.pathname.includes("path-details.html")) {
+
     const container = document.getElementById('roadmapContent');
     const titleElement = document.getElementById('jobTitle');
-    
-    // Agar hum path-details page par nahi hain, toh aage ka code mat chalao
-    if (!container || !titleElement) return; 
+
+    const selectedJob = localStorage.getItem('selectedJob');
+
+    const allRoadmaps = {
+        // same object
+    };
+
+    if (selectedJob && allRoadmaps[selectedJob]) {
+        titleElement.innerText = selectedJob;
+        container.innerHTML = "";
+
+        const roadmapHTML = allRoadmaps[selectedJob].map((step, index) => `
+            <div class="step-container">
+                <div class="step-number">${index + 1}</div>
+                <div class="step-content">
+                    <h3>${step.title}</h3>
+                    <p>${step.desc}</p>
+                </div>
+            </div>
+        `).join('');
+
+        container.innerHTML = roadmapHTML;
+    }
+
+}
 
     const selectedJob = localStorage.getItem('selectedJob');
     const allRoadmaps = {
@@ -102,30 +135,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
    
-   if (selectedJob && allRoadmaps[selectedJob]) {
-    titleElement.innerText = selectedJob;
-    
-    // Clear the container first so old roadmaps don't stick around
-    container.innerHTML = ""; 
+    if (selectedJob && allRoadmaps[selectedJob]) {
+        titleElement.innerText = selectedJob;
+        container.innerHTML = "";
 
-    // Ab naya content add karein
-    const roadmapHTML = allRoadmaps[selectedJob].map((step, index) => `
-        <div class="step-container">
-            <div class="step-number">${index + 1}</div>
-            <div class="step-content">
-                <h3>${step.title}</h3>
-                <p>${step.desc}</p>
-                <div class="tags">
-                    ${step.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        const roadmapHTML = allRoadmaps[selectedJob].map((step, index) => `
+            <div class="step-container">
+                <div class="step-number">${index + 1}</div>
+                <div class="step-content">
+                    <h3>${step.title}</h3>
+                    <p>${step.desc}</p>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `).join('');
 
-    container.innerHTML = roadmapHTML;
-}
-else {
+        container.innerHTML = roadmapHTML;
+    } else {
         titleElement.innerText = "Roadmap Not Found";
         container.innerHTML = "<p>Coming Soon!</p>";
     }
-});

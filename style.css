@@ -1813,7 +1813,7 @@ section:has(.roles-container) {
     border: none;
     background: white; /* Kyunki background black hai */
     padding: 2px; /* Breathing space inside circle around symbol */
-    object-fit: cover;
+    display: inline-block;
     vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
 }
 

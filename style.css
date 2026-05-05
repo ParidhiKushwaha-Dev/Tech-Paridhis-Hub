@@ -1806,15 +1806,17 @@ section:has(.roles-container) {
 
 /* Image (Logo) with fixes for Oval shape and Symmetry */
 .circle-logo {
-    width: 40px;  /* Text font size (20px) se symmetric, clean 1.6:1 ratio */
-    height: 40px; /* Width must match exactly for perfect circle */
+    width: 35px;  /* Text font size (20px) se symmetric, clean 1.6:1 ratio */
+    height: 35px; /* Width must match exactly for perfect circle */
     border-radius: 50%; /* Purely circular shape */
     object-fit: contain; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
     border: none;
     background: white; /* Kyunki background black hai */
-    padding: 2px; /* Breathing space inside circle around symbol */
-    object-fit: cover;
-    display: inline-block;
+    padding: 3px; /* Breathing space inside circle around symbol */
+    object-fit: contain !important; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
+    image-rendering: -webkit-optimize-contrast !important; /* Forces higher contrast edge blending for high DPI */
+    image-rendering: high-quality !important; /* Standards-compliant high-quality scale */
+    will-change: transform; /* Signals intent to preserve quality during layout flow updates */
     vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
 }
 

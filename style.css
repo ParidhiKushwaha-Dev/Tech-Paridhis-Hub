@@ -1796,3 +1796,28 @@ section:has(.roles-container) {
     margin: 0 auto;
     padding: 20px;
 }
+
+/* Container jo logo aur text ko hold karta hai */
+.logo-container {
+    display: flex;
+    align-items: center; /* Vertically exact center mein text aur logo */
+    gap: 12px; /* Logo aur text ke beech thoda gap */
+}
+
+/* Image (Logo) ke liye CSS */
+.circle-logo {
+    width: 32px;  /* Itna bada size jo text ki height se match karein */
+    height: 32px; /* Width aur Height same honi chahiye exact circle ke liye */
+    border-radius: 50%; /* Ye image ko perfect circular shape dega */
+    object-fit: cover; /* Logo image container mein blend ho jayegi */
+    border: none; /* Safed box ko hamesha ke liye hatayein */
+    background: white; /* Kyunki aapne black background use kiya hai */
+    padding: 2px; /* Symbol ke surrounding thoda breathing space */
+}
+
+/* Text ke liye basic style check */
+.brand-name {
+    color: white;
+    font-size: 20px; /* Adjust kariye text size apne design ke hisab se */
+    font-weight: bold;
+}

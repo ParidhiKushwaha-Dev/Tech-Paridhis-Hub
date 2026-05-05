@@ -1807,21 +1807,20 @@ section:has(.roles-container) {
 /* Image (Logo) with fixes for Oval shape and Symmetry */
 .circle-logo {
     /* 1. Size balance: Circle ko decent rakha hai */
-    width: 40px !important;  
-    height: 40px !important; 
+    width: 40px;  
+    height: 40px; 
     
-    border-radius: 50% !important;
-    background-color: white !important;
+    border-radius: 50%;
+    background-color: white;
     
     /* 2. Padding Fix: Space kam kiya taaki andar ka logo bada dikhe */
-    padding: 2px !important; 
+    padding: 1.5px; 
 
     /* 3. Softness Fix: Sharpness hatane ke liye contrast properties ko default kiya */
-    image-rendering: auto !important; 
-    filter: blur(0.1px); /* Bahut halka sa blur edges ko soft rakhne ke liye */
+    image-rendering: auto; 
     
     /* 4. Layout */
-    object-fit: contain !important;
+    object-fit: var(--container-width);
     display: inline-block;
     vertical-align: middle;
     

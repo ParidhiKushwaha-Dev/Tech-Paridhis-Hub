@@ -1813,7 +1813,7 @@ section:has(.roles-container) {
     image-rendering: auto;
     border: none;
     background: white; /* Kyunki background black hai */
-    padding: 2px; /* Breathing space inside circle around symbol */
+    padding: 1px; /* Breathing space inside circle around symbol */
     transition: transform 0.4s ease, box-shadow 0.3s ease;
     cursor: pointer;
     display: inline-block;

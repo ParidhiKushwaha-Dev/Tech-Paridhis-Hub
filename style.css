@@ -1810,7 +1810,9 @@ section:has(.roles-container) {
     height: 40px; /* Width must match exactly for perfect circle */
     border-radius: 50%; /* Purely circular shape */
     object-fit: contain; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
+    image-rendering: auto;
     border: none;
+    background: white; /* Kyunki background black hai */
     padding: 1px; /* Breathing space inside circle around symbol */
     display: inline-block;
     vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
@@ -1820,6 +1822,6 @@ section:has(.roles-container) {
 /* Text styles (kept unchanged for symmetry check) */
 .brand-name {
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }

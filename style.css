@@ -1806,17 +1806,31 @@ section:has(.roles-container) {
 
 /* Image (Logo) with fixes for Oval shape and Symmetry */
 .circle-logo {
-    width: 42px;  /* Text font size (20px) se symmetric, clean 1.6:1 ratio */
-    height: 42px; /* Width must match exactly for perfect circle */
-    border-radius: 50%; /* Purely circular shape */
-    object-fit: contain; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
-    image-rendering: auto;
-    border: none;
-    background: white; /* Kyunki background black hai */
-    padding: 3px; /* Breathing space inside circle around symbol */
-    image-rendering: -webkit-optimize-contrast;
+    /* 1. Size balance: Circle ko decent rakha hai */
+    width: 40px !important;  
+    height: 40px !important; 
+    
+    border-radius: 50% !important;
+    background-color: white !important;
+    
+    /* 2. Padding Fix: Space kam kiya taaki andar ka logo bada dikhe */
+    padding: 2px !important; 
+
+    /* 3. Softness Fix: Sharpness hatane ke liye contrast properties ko default kiya */
+    image-rendering: auto !important; 
+    filter: blur(0.1px); /* Bahut halka sa blur edges ko soft rakhne ke liye */
+    
+    /* 4. Layout */
+    object-fit: contain !important;
     display: inline-block;
-    vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
+    vertical-align: middle;
+    
+    transition: transform 0.3s ease;
+}
+
+/* Hover par bina pixelate hue smooth effect */
+.circle-logo:hover {
+    transform: scale(1.05);
 }
 
 

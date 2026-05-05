@@ -1810,22 +1810,16 @@ section:has(.roles-container) {
     height: 40px; /* Width must match exactly for perfect circle */
     border-radius: 50%; /* Purely circular shape */
     object-fit: contain; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
-    image-rendering: auto;
     border: none;
-    background: white; /* Kyunki background black hai */
     padding: 1px; /* Breathing space inside circle around symbol */
-    transition: transform 0.4s ease, box-shadow 0.3s ease;
-    cursor: pointer;
     display: inline-block;
     vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
 }
-.circle-logo:active {
-    transform: scale(0.95);
-}
+
 
 /* Text styles (kept unchanged for symmetry check) */
 .brand-name {
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }

@@ -1,12 +1,12 @@
 /* --- 1. GLOBAL RESET & VARIABLES --- */
 :root {
-    --bg-dark: #150622;
-    --card-bg: #292a2a;
-    --primary: #a855f7;
-    --primary-hover: #9333ea;
+    --bg-dark: #f5f3f7;
+    --card-bg: #89ead5;
+    --primary: #f1edf4;
+    --primary-hover: #098e47;
     --text-main: #ffffff;
     --text-dim: #94a3b8;
-    --border: #2d2d35;
+    --border: #098e47;
     --container-width: 1200px;
 }
 

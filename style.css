@@ -1812,7 +1812,9 @@ section:has(.roles-container) {
     object-fit: contain; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
     border: none;
     background: white; /* Kyunki background black hai */
-    padding: 5px; /* Breathing space inside circle around symbol */
+    padding: 2px; /* Breathing space inside circle around symbol */
+    object-fit: cover;
+    display: inline-block;
     vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
 }
 

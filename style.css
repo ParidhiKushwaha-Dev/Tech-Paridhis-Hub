@@ -1797,27 +1797,28 @@ section:has(.roles-container) {
     padding: 20px;
 }
 
-/* Container jo logo aur text ko hold karta hai */
+/* Container check: make sure no other class is forcing extra widths */
 .logo-container {
     display: flex;
-    align-items: center; /* Vertically exact center mein text aur logo */
-    gap: 12px; /* Logo aur text ke beech thoda gap */
+    align-items: center; /* Vertically symmetric center */
+    gap: 12px;
 }
 
-/* Image (Logo) ke liye CSS */
+/* Image (Logo) with fixes for Oval shape and Symmetry */
 .circle-logo {
-    width: 32px;  /* Itna bada size jo text ki height se match karein */
-    height: 32px; /* Width aur Height same honi chahiye exact circle ke liye */
-    border-radius: 50%; /* Ye image ko perfect circular shape dega */
-    object-fit: cover; /* Logo image container mein blend ho jayegi */
-    border: none; /* Safed box ko hamesha ke liye hatayein */
-    background: white; /* Kyunki aapne black background use kiya hai */
-    padding: 2px; /* Symbol ke surrounding thoda breathing space */
+    width: 32px;  /* Text font size (20px) se symmetric, clean 1.6:1 ratio */
+    height: 32px; /* Width must match exactly for perfect circle */
+    border-radius: 50%; /* Purely circular shape */
+    object-fit: contain; /* Oval/Squish fixed; ensures complete symbol visibility within circle */
+    border: none;
+    background: white; /* Kyunki background black hai */
+    padding: 2px; /* Breathing space inside circle around symbol */
+    vertical-align: middle; /* Inline element behavior adjust for perfect sync with text baseline */
 }
 
-/* Text ke liye basic style check */
+/* Text styles (kept unchanged for symmetry check) */
 .brand-name {
     color: white;
-    font-size: 20px; /* Adjust kariye text size apne design ke hisab se */
+    font-size: 20px;
     font-weight: bold;
 }

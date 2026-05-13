@@ -180,7 +180,7 @@
      </div>
 
     <section class="tools-page">
-    <h1 class="main-title">Click to Unlock My Toolbox 🛠️</h1>
+    <h2 class="main-title">Click to Unlock My Toolbox 🛠️</h2>
     <p class="tagline" style="color: #38bdf8; opacity: 0.8;">
         <i>Note: Click the box for a surprise!</i>
     </p>
@@ -218,34 +218,40 @@
         ]
     };
 
-    function openBox(type) {
-            document.getElementById('crackerSound').play();
+    function openBox(category) {
             const modal = document.getElementById('toolModal');
             const title = document.getElementById('modalTitle');
             const list = document.getElementById('toolList');
 
-            title.innerText = (type === 'it' ? "IT Toolbox" : "Marketing Toolbox") + " 💥";
+            // Debugging checks
+            if (!modal || !title || !list) {
+                console.error("One or more modal elements are missing in HTML!");
+                return;
+            }
+
+            title.innerText = (category === 'it' ? "IT Toolbox" : "Marketing Toolbox") + " 💥";
             
-            list.innerHTML = tools[type].map(t => `
+            list.innerHTML = toolsData[category].map(item => `
                 <li>
-                    <strong class="tool-name">${t.name}</strong>
-                    <span class="tool-desc">${t.desc}</span>
+                    <span class="t-name">${item.name}</span>
+                    <span class="t-desc">${item.desc}</span>
                 </li>
             `).join('');
 
             modal.style.display = "block";
-            document.body.style.overflow = "hidden"; 
+            document.body.style.overflow = "hidden";
         }
 
         function closeBox() {
             document.getElementById('toolModal').style.display = "none";
-            document.body.style.overflow = "auto"; 
+            document.body.style.overflow = "auto";
         }
 
         window.onclick = function(event) {
-            const modal = document.getElementById('toolModal');
-            if (event.target == modal) { closeBox(); }
-        }
+            if (event.target == document.getElementById('toolModal')) {
+                closeBox();
+            }
+        };
 </script>
 
      <footer class="main-footer">

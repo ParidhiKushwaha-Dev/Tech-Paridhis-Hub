@@ -20,119 +20,130 @@
   gtag('config', 'G-S87THM945D');
 </script>
 <style>
-    /* Modal Styling for Dark Theme */
-    .modal {
-        display: none; position: fixed; z-index: 1000; 
-        left: 0; top: 0; width: 100%; height: 100%;
-        background-color: rgba(15, 23, 42, 0.9); /* Matching Navy background */
-        animation: explode 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+        /* 1. Main Page Styling */
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #0f172a; 
+            color: white; 
+        }
 
-    .modal-content {
-        background-color: #1e293b; /* Tool Item background color */
-        margin: 10% auto; padding: 30px;
-        width: 85%; max-width: 500px;
-        border-radius: 20px; text-align: left;
-        border: 1px solid #38bdf8;
-        color: #f1f5f9;
-        box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
-    }
+        .tools-page {
+            padding: 80px 5% 60px;
+            text-align: center;
+            min-height: 100vh;
+        }
 
-    .close { float: right; font-size: 28px; cursor: pointer; color: #38bdf8; }
+        .main-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
 
-    @keyframes explode {
-        0% { transform: scale(0.5); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-    
-    tools-page {
-    background-color: #0f172a; /* Deep Navy Dark */
-    padding: 100px 5% 60px;
-    text-align: center;
-    min-height: 80vh;
-}
+        .tagline {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
 
-.tools-page .main-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
-}
+        /* 2. Boxes Alignment (Side-by-Side) */
+        .tools-container {
+            display: flex;
+            flex-direction: row; 
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; 
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
+        .tool-item {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            min-width: 250px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
 
-/* Hover karne par bhi blue hi rahe (agar pink ho raha ho toh) */
+        .tool-item:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            color: #38bdf8;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
 
-.tools-page .tagline {
-    color: #38bdf8;
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto 60px;
-    font-weight: 300;
-    opacity: 0.9;
-}
+        /* 3. Popup (Modal) Styling */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 0; top: 0; 
+            width: 100%; height: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            overflow-y: auto; 
+        }
 
+        .modal-content {
+            background-color: #1e293b;
+            margin: 50px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 550px;
+            border-radius: 20px;
+            border: 2px solid #38bdf8;
+            color: #f1f5f9;
+            position: relative;
+            animation: boom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-/* 2. Tool Categories Section */
-.tools-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-}
+        @keyframes boom {
+            0% { transform: scale(0.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-.tool-category {
-    text-align: left;
-}
+        .close-btn { 
+            color: #38bdf8; 
+            position: absolute; 
+            right: 20px; top: 15px; 
+            font-size: 30px; 
+            cursor: pointer; 
+        }
 
-.cat-title {
-    font-size: 1.4rem;
-    color: #f1f5f9;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(56, 189, 248, 0.2);
-    display: inline-block;
-    position: relative;
-}
+        /* List Styling - Tagline visibility fix */
+        #toolList {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
 
-.cat-title::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: #38bdf8; /* Highlight underline */
-}
+        #toolList li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-/* 3. Tool Item Cards */
-.tool-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-}
+        .tool-name {
+            font-size: 1.25rem;
+            color: #ffffff; /* Heading white */
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
 
-.tool-item {
-    background: #1e293b;
-    color: #e2e8f0;
-    padding: 25px 15px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.tool-item:hover {
-    transform: translateY(-5px);
-    background: rgba(56, 189, 248, 0.08);
-    border-color: #38bdf8;
-    color: #38bdf8;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-</style>
+        .tool-desc {
+            font-size: 1rem;
+            color: #ffffff !important; /* FIXED: Tagline pure White for high visibility */
+            opacity: 1; /* Full visibility */
+            font-weight: 400;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 
 
@@ -170,25 +181,24 @@
 
      </div>
 
-    <h1>Click to Unlock My Toolbox 🛠️</h1>
-    <p><i>Note: Click the box for a surprise!</i></p>
+    <section class="tools-page">
+    <h1 class="main-title">Click to Unlock My Toolbox 🛠️</h1>
+    <p class="tagline" style="color: #38bdf8; opacity: 0.8;">
+        <i>Note: Click the box for a surprise!</i>
+    </p>
 
-    <div class="container">
-        <div class="tool-box" onclick="openBox('it')">IT Tool Box 💻</div>
+    <div class="tools-container">
+        <!-- IT Box -->
+        <div class="tool-item" onclick="openBox('it')">
+            IT Tool Box 💻
+        </div>
         
-        <div class="tool-box" onclick="openBox('marketing')" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4);">
+        <!-- Marketing Box -->
+        <div class="tool-item" onclick="openBox('marketing')" style="background: linear-gradient(135deg, #1e293b, #2d3748);">
             Marketing Box 📈
         </div>
     </div>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeBox()">&times;</span>
-            <h2 id="modalTitle">Tools</h2>
-            <ul id="toolList">
-                </ul>
-        </div>
-    </div>
+</section>
 
     <audio id="crackerSound" src="https://www.soundjay.com/misc/sounds/magic-chime-01.mp3"></audio>
 
@@ -212,31 +222,33 @@
     };
 
     function openBox(type) {
-        document.getElementById('crackerSound').play();
-        document.getElementById('myModal').style.display = "block";
-        
-        document.getElementById('modalTitle').innerText = type.toUpperCase() + " Toolbox 💥";
-        const list = document.getElementById('toolList');
-        list.innerHTML = ""; 
+            document.getElementById('crackerSound').play();
+            const modal = document.getElementById('toolModal');
+            const title = document.getElementById('modalTitle');
+            const list = document.getElementById('toolList');
 
-        // 2. Loop ko update kiya hai taaki Name aur Tag dono dikhein
-        tools[type].forEach(tool => {
-            let li = document.createElement("li");
-            li.style.padding = "15px";
-            li.style.borderBottom = "1px solid #eee";
-            li.style.listStyle = "none";
+            title.innerText = (type === 'it' ? "IT Toolbox" : "Marketing Toolbox") + " 💥";
             
-            // HTML structure for Tool Name and Tagline
-            li.innerHTML = `<strong>${tool.name}</strong><br>
-                            <small style="color: #666;">${tool.tag}</small>`;
-            
-            list.appendChild(li);
-        });
-    }
+            list.innerHTML = tools[type].map(t => `
+                <li>
+                    <strong class="tool-name">${t.name}</strong>
+                    <span class="tool-desc">${t.desc}</span>
+                </li>
+            `).join('');
 
-    function closeBox() {
-        document.getElementById('myModal').style.display = "none";
-    }
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden"; 
+        }
+
+        function closeBox() {
+            document.getElementById('toolModal').style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('toolModal');
+            if (event.target == modal) { closeBox(); }
+        }
 </script>
 
      <footer class="main-footer">

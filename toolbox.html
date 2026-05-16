@@ -191,8 +191,8 @@
      </div>
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; text-align: left;">
         <div><h2 style="color: #f5f7f9; font-size: 2.2rem; margin-bottom: 20px; font-family: 'Space Grotesk', sans-serif; text-align: center;">Why Modern Workflows Require Smarter Execution & Tracking</h2></div>
-        <div style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
-            <h3 class="hover-card" style="color: #f6f8f8; margin-bottom: 10px;">Why are these technical tools essential?</h3>
+        <div class="hover-card" style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
+            <h3 style="color: #f6f8f8; margin-bottom: 10px;">Why are these technical tools essential?</h3>
             <p style="color: #e2e4e7;; font-size: 0.95rem; line-height: 1.5;">
 As a computer science graduate I understand how important it is to have code. If you do not use the platform and code setups search engine bots will not be able to properly crawl and index your website.
  This is because they rely on code to navigate and understand your site. So it is crucial to get your code right, for search engine optimisation. Using the platform and code setups helps search engines like Google to crawl and index your site accurately.
@@ -394,28 +394,26 @@ The world of the internet and search engine algorithms change every day. A strat
 <script>
     document.querySelectorAll('.faq-question').forEach(button => {
         button.addEventListener('click', () => {
-            const faqItem = button.parentElement;
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = faqItem.querySelector('.faq-icon');
+            const currentItem = button.parentElement;
+            const currentAnswer = currentItem.querySelector('.faq-answer');
+            const currentIcon = currentItem.querySelector('.faq-icon');
             
-            // Close other open accordion items (Optional but looks professional)
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) {
-                    item.querySelector('.faq-answer').style.maxHeight = null;
-                    item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
-                    item.querySelector('.faq-icon').innerText = '+';
-                }
-            });
+            // Step 1: Pehle check karo ki kya ye item pehle se khula hai?
+            const isAlreadyOpen = currentAnswer.style.maxHeight && currentAnswer.style.maxHeight !== "0px";
 
-            // Toggle current item
-            if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
+            // Step 2: SARE ke sare accordion items ko pehle band kar do
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.querySelector('.faq-answer').style.maxHeight = null;
+                const icon = item.querySelector('.faq-icon');
                 icon.style.transform = 'rotate(0deg)';
                 icon.innerText = '+';
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                icon.style.transform = 'rotate(45deg)'; // Rotates + to look like an X or neat turn
-                icon.innerText = '×';
+            });
+
+            // Step 3: Agar click kiya hua item pehle se khula nahi tha, toh sirf use hi kholo
+            if (!isAlreadyOpen) {
+                currentAnswer.style.maxHeight = currentAnswer.scrollHeight + "px";
+                currentIcon.style.transform = 'rotate(45deg)'; // Plus ko rotate karke neat cross bana dega
+                currentIcon.innerText = '×';
             }
         });
     });

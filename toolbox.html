@@ -20,7 +20,18 @@
   gtag('config', 'G-S87THM945D');
 </script>
 <style>
-        /* 1. Main Page Styling */
+        
+        /* Cards Lift and Bounce Effect */
+.hover-card:hover {
+    transform: translateY(-8px); /* Card thoda upar uthega */
+    border-color: #38bdf8 !important; /* Border glow karega */
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1); /* Soft shadow aayegi */
+}
+
+/* CTA Arrow animation */
+.hover-card:hover span span {
+    transform: translateX(5px); /* Hover karne par arrow thoda aage khiskega */
+}/* 1. Main Page Styling */
         body { 
             margin: 0; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -181,20 +192,20 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; text-align: left;">
         <div><h2 style="color: #f5f7f9; font-size: 2.2rem; margin-bottom: 20px; font-family: 'Space Grotesk', sans-serif; text-align: center;">Why Modern Workflows Require Smarter Execution & Tracking</h2></div>
         <div style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
-            <h3 style="color: #f6f8f8; margin-bottom: 10px;">Why are these technical tools essential?</h3>
+            <h3 class="hover-card" style="color: #f6f8f8; margin-bottom: 10px;">Why are these technical tools essential?</h3>
             <p style="color: #e2e4e7;; font-size: 0.95rem; line-height: 1.5;">
 As a computer science graduate I understand how important it is to have code. If you do not use the platform and code setups search engine bots will not be able to properly crawl and index your website.
  This is because they rely on code to navigate and understand your site. So it is crucial to get your code right, for search engine optimisation. Using the platform and code setups helps search engines like Google to crawl and index your site accurately.
             </p>
         </div>
 
-        <div style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
+        <div class="hover-card" style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
             <h3 style="color: #f5f5f5; margin-bottom: 10px;">How to do smart SEO?</h3>
             <p style="color: #e2e4e7;; font-size: 0.95rem; line-height: 1.5;">
 Search engine optimization is not about putting in keywords, it is really about understanding the data we have. We use tools like Google Analytics and Google Search Console to get a report on what users are doing on our website right now where our traffic is coming from and how our links are being indexed. Search engine optimization is about looking at this information to make decisions.             </p>
         </div>
 
-        <div style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
+        <div class="hover-card" style="background-color: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155;">
             <h3 style="color: #eef1f2; margin-bottom: 10px;">Why continuous optimization is a must?</h3>
             <p style="color: #e2e4e7; font-size: 0.95rem; line-height: 1.5;">
 The world of the internet and search engine algorithms change every day. A strategy that works today might not work tomorrow. Therefore one should constantly monitor a website's performance, a websites loading speed and a website's mobile responsiveness.Conducting audits helps both beginners and professionals identify a website's shortcomings thereby enabling us to keep the website consistently fast and user-friendly.            </p>
@@ -270,6 +281,13 @@ The world of the internet and search engine algorithms change every day. A strat
         }
     }
 </script>
+
+<div style="background-color: #1e293b; margin-bottom: 30px; border-bottom: 1px solid #eee;">
+    <h2 style="color: #f9f5f5; font-size: 2.5rem; margin-bottom: 15px;">Connect With Tech Paridhi's hub</h2>
+    
+    <p style="color: #f7f5f5; font-size: 1.1rem; max-width: 800px; margin: 0 auto 20px auto; line-height: 1.6;">Use these latest tech tools and <a href="contact.html" class="contact-btn">Share your doubts & experience with me!</a> </p>
+
+     </div>
 
      <footer class="main-footer">
     <div class="footer-container">

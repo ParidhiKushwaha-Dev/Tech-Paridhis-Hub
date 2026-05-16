@@ -218,26 +218,34 @@
     };
 
    function openBox(type) {
-            
-            // Show Modal
-            document.getElementById('myModal').style.display = "block";
-            
-            // Set Content
-            document.getElementById('modalTitle').innerText = type.toUpperCase() + " Toolbox 💥";
-            const list = document.getElementById('toolList');
-            list.innerHTML = ""; // clear previous
-            
-            tools[type].forEach(tool => {
-                let li = document.createElement("li");
-                li.innerText = tool;
-                li.style.padding = "10px";
-                list.appendChild(li);
-            });
-        }
+        // Show Modal
+        document.getElementById('myModal').style.display = "block";
+        
+        // Set Content Title
+        document.getElementById('modalTitle').innerText = (type === 'it' ? 'IT' : 'Marketing') + " Toolbox 💥";
+        
+        const list = document.getElementById('toolList');
+        list.innerHTML = ""; // Clear previous elements
+        
+        // Loop through tools to display both Name and Description
+        tools[type].forEach(tool => {
+            let li = document.createElement("li");
+            li.innerHTML = `<span class="tool-name">${tool.name}</span><span class="tool-desc">${tool.tag}</span>`;
+            list.appendChild(li);
+        });
+    }
 
-        function closeBox() {
-            document.getElementById('myModal').style.display = "none";
+    function closeBox() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    // Modal ke bahar click karne par bhi close ho jaye (UX improvement)
+    window.onclick = function(event) {
+        const modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
+    }
 </script>
 
      <footer class="main-footer">
@@ -282,5 +290,15 @@
         <p>&copy; 2026 Tech Paridhi's Hub. Built for the future, by a CSE insider. ✨</p>
     </div>
 </footer>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeBox()">&times;</span>
+        <h2 id="modalTitle" style="color: #38bdf8; margin-bottom: 20px;">Toolbox 💥</h2>
+        <ul id="toolList">
+            </ul>
+    </div>
+</div>
+
 </body>
 </html>

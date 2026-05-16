@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Tools for Developers and Digital Marketers 2026</title>
-    <link rel="canonical" href="https://tech-pari.vercel.app/toolbox.html"/>
+    <link rel="canonical" href="https://tech-paridhis-hub.vercel.app/toolbox.html"/>
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Tier-3 to Tech Pro: Get the most researched coding roadmap and career guidance for CSE students and 12th pass-outs.">
     <link rel="stylesheet" href="style.css">
@@ -195,7 +195,6 @@
         <div class="tool-item" onclick="openBox('marketing')" style="background: linear-gradient(135deg, #1e293b, #2d3748);">
             Marketing Box 📈
         </div>
-        <audio id="crackerSound" src="https://www.soundjay.com/misc/sounds/magic-chime-01.mp3"></audio>
     </div>
 </section>
 
@@ -218,40 +217,27 @@
         ]
     };
 
-    function openBox(category) {
-            const modal = document.getElementById('toolModal');
-            const title = document.getElementById('modalTitle');
-            const list = document.getElementById('toolList');
-
-            // Debugging checks
-            if (!modal || !title || !list) {
-                console.error("One or more modal elements are missing in HTML!");
-                return;
-            }
-
-            title.innerText = (category === 'it' ? "IT Toolbox" : "Marketing Toolbox") + " 💥";
+   function openBox(type) {
             
-            list.innerHTML = toolsData[category].map(item => `
-                <li>
-                    <span class="t-name">${item.name}</span>
-                    <span class="t-desc">${item.desc}</span>
-                </li>
-            `).join('');
-
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden";
+            // Show Modal
+            document.getElementById('myModal').style.display = "block";
+            
+            // Set Content
+            document.getElementById('modalTitle').innerText = type.toUpperCase() + " Toolbox 💥";
+            const list = document.getElementById('toolList');
+            list.innerHTML = ""; // clear previous
+            
+            tools[type].forEach(tool => {
+                let li = document.createElement("li");
+                li.innerText = tool;
+                li.style.padding = "10px";
+                list.appendChild(li);
+            });
         }
 
         function closeBox() {
-            document.getElementById('toolModal').style.display = "none";
-            document.body.style.overflow = "auto";
+            document.getElementById('myModal').style.display = "none";
         }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('toolModal')) {
-                closeBox();
-            }
-        };
 </script>
 
      <footer class="main-footer">

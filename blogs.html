@@ -18,6 +18,58 @@
 
   gtag('config', 'G-S87THM945D');
 </script>
+<style>
+    /* Category Grid & Cards */
+.blog-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto 60px auto;
+    padding: 0 20px;
+}
+.category-box {
+    background-color: #111827; /* Rich dark box */
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+.category-box:hover {
+    transform: translateY(-5px);
+    border-color: #a855f7; /* Purple magic glow */
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.1);
+}
+.blog-list-placeholder {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+.blog-list-placeholder li {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #374151;
+}
+.blog-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: inline-block;
+    margin-bottom: 4px;
+    transition: color 0.2s;
+}
+.blog-link:hover {
+    color: #a855f7;
+}
+.blog-meta-desc {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+</style>
 </head>
 <body>
 
@@ -41,7 +93,61 @@
             <main class="container">
     <h1 class="page-title">Tech Insights by Pari</h1>
     <p class="page-subtitle">2026 ki Tech Industry, AI trends aur meri internship journey ke bare mein padhein.</p>
+     <div class="blog-categories">
+    
+    <div class="category-box">
+        <h3 style="color: #38bdf8; font-size: 1.4rem; margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+            Tech & SEO Analytics 💻
+        </h3>
+        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">
+            Technical breakdown, core algorithms, and real internship experiences.
+        </p>
+        
+        <ul class="blog-list-placeholder">
+            <li>
+                <a href="blogs/seo-technical-audit-2026.html" class="blog-link">In Progress</a>
+                <p class="blog-meta-desc">In Progress</p>
+            </li>
+            </ul>
+    </div>
 
+    <div class="category-box">
+        <h3 style="color: #a855f7; font-size: 1.4rem; margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+            Sanatan History & Sanity 🕉️
+        </h3>
+        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">
+            Debunking misinterpretations and equipping youngsters with logical, historical facts.
+        </p>
+        
+        <ul class="blog-list-placeholder">
+            <li>
+                <a href="blogs/truth-behind-16000-marriages.html" class="blog-link">In Progress</a>
+                <p class="blog-meta-desc">In Progress</p>
+            </li>
+            <li>
+                <a href="blogs/why-sita-maa-left-ayodhya.html" class="blog-link">In Progeress</a>
+                <p class="blog-meta-desc">Coming Soon</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category-box">
+        <h3 style="color: #f59e0b; font-size: 1.4rem; margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+            Indian Traditions & Rituals 🪔
+        </h3>
+        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">
+            Documenting authentic cultural customs, state rituals, and hidden scientific logics.
+        </p>
+        
+        <ul class="blog-list-placeholder">
+            <li>
+                <a href="blogs/customs-of-madhya-pradesh.html" class="blog-link">In Progress</a>
+                <p class="blog-meta-desc">In Progress</p>
+            </li>
+            </ul>
+    </div>
+
+</div>
     <div id="blogger-posts" class="blog-grid">
         <h2>Latest Insights</h2>
 <p>Sharing my journey, learnings, and technical experiments in the world of SEO and CSE. New articles coming soon!</p>
